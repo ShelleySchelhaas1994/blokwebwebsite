@@ -39,12 +39,12 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   https://www.vedder-vedder.com/
 
   #### Screenshot(s) van de eerste pagina (small screen): 
-  Vedder & Vedder homepage
+  Vedder & Vedder homepage:
   <img src="readme-images/veddervedderpaginaeen.png" width="375px" alt="Dit is de homepage van Vedder & Vedder">
 
   #### Screenshot(s) van de tweede pagina (small screen):
-  Vedder & Vedder artikelpagina
-  <img src="readme-images/veddervedderpaginaeen.png" width="375px" alt="Op deze pagina worden items weergegeven">
+  Vedder & Vedder artikelpagina:
+  <img src="readme-images/veddervedderpaginatwee.png" width="375px" alt="Op deze pagina worden items weergegeven">
  
 </details>
 
