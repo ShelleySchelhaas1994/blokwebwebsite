@@ -52,17 +52,20 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 ## Toegankelijkheidstest 1/2 (week 1)
 
-<details>
+<details open>
   <summary>uitwerken na test in 1e werkgroep</summary>
 
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen:
 
   #### Screenreader
-  Hier korte omschrijving (met indien nodig afbeeldingen)
-
+  * Bij het kiezen van een product is het niet mogelijk om met de screenreader optie een anders soort materiaal, lengte etc. te kiezen via het drowpdown menu. 
+  * Er is geen hover state voor het menu, je gaat direct naar de product pagina.
+  * De linkjes vind ik duidelijk aangezien je hier de naam van het product en de vanaf prijs hoort. s
+  
   Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
-
+  - De code moet herschreven worden waardoor het menu openklapt en je hierdoor heen kan door omhoog en omlaag
+  - Dit kan volgens Sanne opgelost worden via JavaScript
 
   #### Muis en Toetsenbord 
   Hier korte omschrijving (met indien nodig afbeeldingen)
