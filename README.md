@@ -61,7 +61,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   #### Screenreader
   * Bij het kiezen van een product is het niet mogelijk om met de screenreader optie een anders soort materiaal, lengte etc. te kiezen via het drowpdown menu. 
   * Er is geen hover state voor het menu, je gaat direct naar de product pagina.
-  * De linkjes vind ik duidelijk aangezien je hier de naam van het product en de vanaf prijs hoort. s
+  * De linkjes vind ik duidelijk aangezien je hier de naam van het product en de vanaf prijs hoort. 
   
   Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
   - De code moet herschreven worden waardoor het menu openklapt en je hierdoor heen kan door omhoog en omlaag
@@ -74,15 +74,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   #### Motoriek (shocks, elastiekjes)
-  Hier korte omschrijving (met indien nodig afbeeldingen)
-
-  Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  * De website is redelijk goed te bedienen tijdens de shocks en met de elastiekjes om. Dit aangezien de buttons/knoppen vrij groot zijn en je hier dus goed om kan klikken. 
 
 
   #### Visueel (brillen, contrast, kleurenblind, dark/light). 
-  Hier korte omschrijving (met indien nodig afbeeldingen)
-
-  Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  * Door de wazige bril is het lastig om de tekst te lezen op de website aangezien dit erg dun is. De koppen zijn inprincipe wel goed leesbaar. 
 
 </details>
 
