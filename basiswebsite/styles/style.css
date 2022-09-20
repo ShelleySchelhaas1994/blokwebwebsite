@@ -1,0 +1,323 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+button,
+summary {
+	cursor: pointer;
+}
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	/* startje */
+	--color-text: #111;
+	--color-background: #white;
+}
+
+
+
+
+
+/****************/
+/* JOUW STYLING */
+/****************/
+
+body {
+	color: var(--color-text);
+	background-color: var(--color-background);
+	font-family: Mabry Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+li	{
+	text-decoration: none;
+	appearance: none;
+
+}
+
+
+
+
+
+
+
+
+/****************/
+/* HEADER */
+/****************/
+
+header {
+	min-height: 4em;
+
+	display: flex;
+	flex-direction: column-reverse;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+
+header section:nth-of-type(1) {
+
+	padding: 1.5em;
+	background-color: white;
+	box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	justify-content: flex-start;
+	gap: 1em;
+	align-items: center;
+}
+
+
+
+
+/* NAV - menu */
+
+header section:nth-of-type(1) button {
+	padding: .5em;
+
+
+	display: flex;
+	align-items: center;
+	gap: .25em;
+
+	
+	appearance: none;
+	background-color: white;
+	border: none;
+	border-radius: .25em;
+	font: inherit;
+	text-align: center;
+	color: black;
+
+	
+	position: relative;
+	z-index: 100;
+}
+
+
+/**************************/
+/* MENU OPENEN/SLUITEN */
+/**************************/
+
+header section:nth-of-type(1) nav:nth-of-type(1) ul {
+	background-color: white;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	gap: 1em;
+	align-content: start;
+
+	background-color: #f8f7f4;
+	text-transform: uppercase;
+
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	transform: translateY(-100%);
+	transition: 10s;
+}
+
+header section:nth-of-type(1) nav:nth-of-type(1).menuGeopend {
+	transform: translateY(0%);
+}
+
+
+
+header section:nth-of-type(1) nav:nth-of-type(2) ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	display: flex;
+	gap: 1em;
+	align-items: center;
+}
+
+/* SECTION 2 = RECLAME */
+header section:nth-of-type(2) button {
+	appearance: none;
+	background-color: white;
+	border: none;
+	border-radius: .25em;
+	font: inherit;
+	text-align: center;
+	color: black;
+}
+
+header section:nth-of-type(2) {
+	padding: 7px 4em;
+	background-color: #b2596d;
+	font-size: 0.7em;
+	color: white;
+	text-transform: uppercase;
+
+	display: flex;
+	justify-content: space-around;
+}
+
+header section:nth-of-type(2) ul {
+	padding: 0em 1em;
+	list-style: none;
+	font-size: .9em;
+
+	display: flex;
+	gap: 10em;
+	justify-content: space-between;
+}
+
+header section:nth-of-type(2) button {
+	padding: 0 2em;
+	background-color: #b2596d;
+	color: white;
+}
+
+
+
+
+
+
+
+
+/****************/
+/* MAIN */
+/****************/
+
+
+main {}
+
+/* SECTION 1 = NEW */
+
+main section:nth-of-type(1) {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 10% 10% 10% 10% 10% 10% 10%;
+}
+
+main section:nth-of-type(1) h2 {
+	font-family: 'The Girl Next Door', cursive;
+	font-size: 2em;
+	
+
+	grid-column-start: 1;
+	grid-column-end: -1;
+
+	grid-row-start: 6;
+	grid-row-end: 7;
+	z-index: 90;
+}
+
+main section:nth-of-type(1) img {
+	grid-column-start: 1;
+	grid-column-end: -1;
+
+	grid-row-start: 1;
+	grid-row-end: 9;
+}
+
+main section:nth-of-type(1) p {
+	padding: .4em .4em .4em .4em;
+	margin: 1em 1em 1em 1em;
+	box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+	text-transform: uppercase;
+	font-size: .8em;
+	color: black;
+	background-color: white;
+	
+
+	grid-column-start: 1;
+	grid-column-end: 2;
+
+	grid-row-start: 8;
+	grid-row-end: 9;
+
+}
+
+
+
+
+
+/* SECTION 2 = BESTSELLERS */
+main h3 {
+	text-transform: uppercase;
+	font-size: 1.5em;
+	padding: 1.5em 1.2em;
+}
+
+main section:nth-of-type(2) {}
+
+
+main section:nth-of-type(2) ul {
+	width: 75%;
+	height: 75%;
+	display: flex;
+	overflow-x: auto;
+}
+
+main section:nth-of-type(2) li {
+	width: 100%;
+	flex-shrink: 0;
+
+
+}
+
+/* SECTION 3 = ONS VERHAAL */
+
+main section:nth-of-type(3) {}
+
+/* SECTION 4 = VOOR HEM */
+
+main section:nth-of-type(4) {}
+
+/* SECTION 5 = KIDS */
+
+main section:nth-of-type(5) {}
+
+/* SECTION 6 = TRUSTPILOT */
+
+main section:nth-of-type(6) {}
+
+
+
+
+
+
+
+
+
+/****************/
+/* FOOTER */
+/****************/
+
+footer {}
