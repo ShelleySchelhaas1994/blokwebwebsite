@@ -126,10 +126,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - goede voortgang, verder gaan met het menu maken en javascript neerzetten.
 
 </details>
 
@@ -139,7 +136,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 ## Voortgang 2 (week 3)
 
-<details>
+<details open>
   <summary>uitwerken voor 2e voortgang</summary>
 
   ### Stand van zaken
@@ -149,11 +146,10 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+  |   Elaine              | Shelley            | Lisanne      | Karenza        |
+  | button verplaatsen    | css nalop          | ---          | ---              |
+  | in hamburger menu     | grid position      | en ik dit    | en dan ik dat    |
+
 
 
   ### Verslag van meeting
