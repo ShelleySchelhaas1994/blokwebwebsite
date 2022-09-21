@@ -1,3 +1,14 @@
+@font-face {
+	font-family: "Mabry";
+	src: url("../fonts/mabry-light.otf") format("truetype")
+}
+
+@font-face {
+	font-family: "Mabry Bold";
+	src: url("../fonts/mabry-bold-pro.otf") format("truetype")
+}
+
+
 /**************/
 /* CSS REMEDY */
 /**************/
@@ -23,9 +34,13 @@ summary {
 /*********************/
 :root {
 	/* startje */
-	--color-text: #111;
+	--color-text: #666666;
+	--color-header: #111;
 	--color-background: #white;
+	--type-font-headers: "Mabry Bold";
+	--type-font-regular-text: "Mabry";
 }
+
 
 
 
@@ -38,7 +53,7 @@ summary {
 body {
 	color: var(--color-text);
 	background-color: var(--color-background);
-	font-family: Mabry Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-family: "Mabry", Helvetica, Arial, sans-serif;
 }
 
 img {
@@ -48,17 +63,37 @@ img {
 a {
 	color: black;
 	text-decoration: none;
+	text-transform: uppercase;
 }
 
-li	{
+
+li {
 	text-decoration: none;
+	list-style: none;
 	appearance: none;
+}
+
+h2,
+h3 {
+	padding: 1em;
+
+	color: var(--color-header);
+	font-family: var(--type-font-headers);
+	text-transform: uppercase;
+
 
 }
 
+p,
+ul,
+li {
+	padding: 1em;
 
-
-
+	font-family: var(--type-font-regular-text);
+	color: var(--color-text-regulartext);
+	font-size: 1em;
+	line-height: 1.8em;
+}
 
 
 
@@ -68,94 +103,120 @@ li	{
 /****************/
 
 header {
-	min-height: 4em;
-
-	display: flex;
-	flex-direction: column-reverse;
+	/* om de schuivende nav binnen de header te kunnen positioneren */
+	/* position: relative; - wordt overschreven door sticky */
 	position: sticky;
 	top: 0;
 	z-index: 100;
+
+	/* min-height: 4em; - niet nodig*/
+
+	display: flex;
+	flex-direction: column-reverse;
+
+	box-shadow: 0 3px 10px rgb(0 0 0 / .1);
+	/* hier beter */
 }
 
 
-header section:nth-of-type(1) {
 
-	padding: 1.5em;
-	background-color: white;
-	box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+
+/********************/
+/* LOGO & DE MENU"S */
+/********************/
+
+/* de container van de 2e nav en het logo */
+header section:nth-of-type(1) {
+	font-size: 0.7em;
+	z-index: 100;
+	/* boven het uitschuifmenu */
+	padding: .5em;
 
 	display: flex;
 	justify-content: space-between;
-	flex-direction: row;
-	justify-content: flex-start;
+	align-items: center;
+	/* flex-direction: row; is de default */
+	/* justify-content: flex-start; */
 	gap: 1em;
 	align-items: center;
-}
 
-
-
-
-/* NAV - menu */
-
-header section:nth-of-type(1) button {
-	padding: .5em;
-
-
-	display: flex;
-	align-items: center;
-	gap: .25em;
-
-	
-	appearance: none;
 	background-color: white;
-	border: none;
-	border-radius: .25em;
-	font: inherit;
-	text-align: center;
-	color: black;
-
-	
-	position: relative;
-	z-index: 100;
 }
+
+
+
+
+/************/
+/* HET LOGO */
+/************/
+
+header section:nth-of-type(1) h1 img {
+	height: .4em;
+}
+
+
 
 
 /**************************/
 /* MENU OPENEN/SLUITEN */
 /**************************/
 
-header section:nth-of-type(1) nav:nth-of-type(1) ul {
+/* de button */
+header section:nth-of-type(1) button {
+
+	order: -1;
+	/* vooraan */
+	padding: .5em;
+
+	/* display: flex; */
+	/* align-items: center; */
+	/* gap: .25em; */
+
+	appearance: none;
 	background-color: white;
+	border: none;
+	border-radius: .25em;
+	font: inherit;
+	/* text-align: center; */
+	/* color: black; */
+}
+
+
+/* het menu - dat schuift */
+/* los niet meer in de eerste section */
+header>nav ul {
+	position: absolute;
+	/* positioneren tov de header */
+	top: 100%;
+	/* preceis onder de header */
+	/* bottom: 0; - niet nodig dat is het menu zo hoog als het is */
+	left: 0;
+	right: 0;
+
+	/* background-color: white; */
 	margin: 0;
 	padding: 0;
 	list-style: none;
 
 	display: flex;
-	flex-wrap: wrap;
 	flex-direction: column;
 	gap: 1em;
-	align-content: start;
+	/* align-content: start; */
 
 	background-color: #f8f7f4;
 	text-transform: uppercase;
 
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-
 	transform: translateY(-100%);
-	transition: 10s;
+	transition: 1s;
 }
 
-header section:nth-of-type(1) nav:nth-of-type(1).menuGeopend {
+/* hier staat nu nog ul achter */
+header>nav.menuGeopend ul {
 	transform: translateY(0%);
 }
 
-
-
-header section:nth-of-type(1) nav:nth-of-type(2) ul {
+/* het service menu - aan de rechterkant */
+header section:nth-of-type(1) nav ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -165,7 +226,16 @@ header section:nth-of-type(1) nav:nth-of-type(2) ul {
 	align-items: center;
 }
 
+/***********************/
 /* SECTION 2 = RECLAME */
+/***********************/
+
+header section:nth-of-type(2) {
+	/* boven het menu */
+	position: relative;
+	z-index: 100;
+}
+
 header section:nth-of-type(2) button {
 	appearance: none;
 	background-color: white;
@@ -177,7 +247,7 @@ header section:nth-of-type(2) button {
 }
 
 header section:nth-of-type(2) {
-	padding: 7px 4em;
+	padding: 0px 4em;
 	background-color: #b2596d;
 	font-size: 0.7em;
 	color: white;
@@ -221,47 +291,46 @@ main {}
 
 main section:nth-of-type(1) {
 	display: grid;
-	grid-template-columns: 100%;
-	grid-template-rows: 10% 10% 10% 10% 10% 10% 10%;
+	grid-template-rows: 1fr 5em;
 }
 
 main section:nth-of-type(1) h2 {
-	font-family: 'The Girl Next Door', cursive;
+	padding: 0em;
+
+	font-family: 'Nanum Myeongjo', serif;
+	text-transform: none;
+	font-weight: lighter;
 	font-size: 2em;
-	
 
+	grid-row-start: 1;
 	grid-column-start: 1;
-	grid-column-end: -1;
 
-	grid-row-start: 6;
-	grid-row-end: 7;
+	align-self: end;
+	justify-self: center;
+	text-align: center;
+
 	z-index: 90;
 }
 
 main section:nth-of-type(1) img {
-	grid-column-start: 1;
-	grid-column-end: -1;
-
-	grid-row-start: 1;
-	grid-row-end: 9;
+	grid-area: 1/1/3/2;
 }
 
 main section:nth-of-type(1) p {
-	padding: .4em .4em .4em .4em;
+	padding: .4em .4em .4em;
 	margin: 1em 1em 1em 1em;
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+
+	font-family: var(--type-font-headers);
+	color: black;
 	text-transform: uppercase;
 	font-size: .8em;
-	color: black;
 	background-color: white;
-	
 
+	place-self: center;
+
+	grid-row-start: 2;
 	grid-column-start: 1;
-	grid-column-end: 2;
-
-	grid-row-start: 8;
-	grid-row-end: 9;
-
 }
 
 
@@ -269,28 +338,93 @@ main section:nth-of-type(1) p {
 
 
 /* SECTION 2 = BESTSELLERS */
+
 main h3 {
 	text-transform: uppercase;
 	font-size: 1.5em;
 	padding: 1.5em 1.2em;
+
 }
 
 main section:nth-of-type(2) {}
 
 
 main section:nth-of-type(2) ul {
-	width: 75%;
-	height: 75%;
 	display: flex;
+	justify-content: space-between;
 	overflow-x: auto;
 }
 
 main section:nth-of-type(2) li {
-	width: 100%;
 	flex-shrink: 0;
+	flex-basis: 70%;
 
+	display: grid;
+	grid-template-rows: 14em 1fr 1fr;
+}
+
+main section:nth-of-type(2) li h4 {
+	margin: 1em;
+	padding: .3em;
+	background-color: #f29eba;
+	font-family: var(--type-font-headers);
+	font-size: .7em;
+	text-transform: uppercase;
+	color: black;
+	border-radius: 1.2em;
+
+	grid-row-start: 1;
+	grid-column-start: 1;
+	z-index: 90;
+
+	align-self: center;
+	justify-self: center;
+	text-align: center;
+}
+
+
+main section:nth-of-type(2) li p:nth-of-type(1) {
+	padding: 0;
+	
+	font-family: var(--type-font-headers);
+	font-size: .9em;
+	color: black;
+
+	grid-row-start: 2;
+	grid-column-start: 1;
+	z-index: 90;
+
+	justify-content: start;
+	align-self: top;
 
 }
+
+
+main section:nth-of-type(2) li p:nth-of-type(2) {
+	padding: 0;
+
+	grid-row-start: 3;
+	grid-column-start: 1;
+
+	font-size: .9em;
+	color: black;
+
+	z-index: 90;
+}
+
+main section:nth-of-type(2) li img {
+	grid-area: 1/1/4/2;
+	background-color: #f9f7f1;
+}
+
+
+
+
+
+
+
+
+
 
 /* SECTION 3 = ONS VERHAAL */
 
