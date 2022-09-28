@@ -2,7 +2,6 @@
 /* FONTS */
 /**************/
 
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500&family=Luckiest+Guy&family=Pacifico&family=Sniglet:wght@400;800&family=Source+Sans+Pro:wght@300&family=The+Girl+Next+Door&display=swap');
 
 @font-face {
 	font-family: "Mabry";
@@ -51,7 +50,7 @@
 	--color-header-reclame: #b2596d;
 	--color-header-reclame-text: #ffffff;
 
-	--color-underline-link: #eeb8c6;
+	--color-underline-link: #b2596d;
 
 	/* fonts */
 	--type-font-headers: "Mabry Bold";
@@ -457,24 +456,52 @@ main section:nth-of-type(2) li img {
 
 
 /*********************/
-/*  SECTION 3 - 7 = A linkje met underline */
+/*  SECTION 3 - 7
+LINK UNDERLINE - BRON SANNE
 /*********************/
 
-
-/* is n+3 drie omdat het vanaf de derde tot laatste 
-section moet gelden en niet die daarboven */
 main section:nth-child(n+3) p:nth-of-type(2) {
-	padding: 0;
-	margin: 0 0 10em;
-
-	border-bottom: .2em solid var(--color-underline-link);
-	width: fit-content;
-
 	position: relative;
+	width: fit-content;
 
 	font-size: .8em;
 	font-family: var(--type-font-headers);
 	letter-spacing: .1em;
+}
+
+main section:nth-child(n+3) p:nth-of-type(2)::before {
+	content: "";
+	position: absolute;
+
+	left: 0;
+	right: 0;
+	bottom: .6em;
+
+	height: .25em;
+
+	background-color: var(--color-underline-link);
+	border-radius: .125em;
+
+	transform-origin: right;
+	transform: scalex(0);
+	transition: transform .3s;
+}
+
+main section:nth-child(n+3) p:nth-of-type(2):visited {
+	color: var(--color-underline-link);
+}
+
+main section:nth-child(n+3) p:nth-of-type(2):focus-visible {
+	background: var(--color-underline-link);
+}
+
+main section:nth-child(n+3) p:nth-of-type(2):hover::before {
+	transform-origin: left;
+	transform: scalex(1);
+}
+
+main section:nth-child(n+3) p:nth-of-type(2):active {
+	color: var(--color-header);
 }
 
 
@@ -492,8 +519,12 @@ main section:nth-of-type(3) p:nth-of-type(1) {
 	margin: 0 0 1.5em;
 }
 
+
 main section:nth-child(3) p:nth-of-type(2) {
+	padding:0;
+	padding-bottom: 1em;
 	margin-left: 2.1em;
+	margin-bottom: 7em;
 }
 
 
@@ -521,7 +552,12 @@ main section:nth-of-type(4) h2 {
 }
 
 main section:nth-child(4) p:nth-of-type(2) {
-	left: 40%;
+	padding:0;
+	padding-bottom: 1em;
+	margin-bottom: 7em;
+	margin-left: 40%;
+
+
 }
 
 
@@ -544,8 +580,10 @@ main section:nth-of-type(5) p:nth-of-type(1) {
 	padding: 1.8em;
 }
 
-main section:nth-of-type(5) p:nth-of-type(2) {
 
+main section:nth-of-type(5) p:nth-of-type(2) {
+	padding:0;
+	padding-bottom: 1em;
 	margin-left: 2.1em;
 	margin-bottom: 10em;
 }
@@ -614,15 +652,16 @@ footer section h2 {
 	margin: 0;
 	font-size: 1em;
 	letter-spacing: 1px;
-	
+
 }
 
 footer section li {
 	margin: 0;
-	padding:0;
-line-height: 2.5em;
-	font-size:.9em;
+	padding: 0;
+	line-height: 2.5em;
+	font-size: .9em;
 }
+
 footer section li a {
 	text-transform: none;
 }
