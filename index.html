@@ -8,9 +8,6 @@
 	<title>Gepersonaliseerde sieraden kopen bij Vedder & Vedder</title>
 	<link href="styles/style.css" rel="stylesheet">
 	<link rel="icon" type="image/svg+xml" href="images/favicoon.png">
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500&family=Luckiest+Guy&family=Pacifico&family=Sniglet:wght@400;800&family=Source+Sans+Pro:wght@300&family=The+Girl+Next+Door&display=swap');
-	</style>
 </head>
 
 <body>
@@ -21,12 +18,13 @@
 				<img src="images/logo.svg" alt="Vedder & Vedder logo">
 			</h1>
 
-			<button>Menu</button>
+			<!-- arialabel toevoegne, svg opzoeken hamburger + zoekbalk en winkelmandje  -->
+			<button><img src="images/hamburgermenu.svg" alt=""></button>
 
 			<nav>
 				<ul>
-					<li><a href="#"> Zoek balk </a></li>
-					<li><a href="#"> Winkelmandje </a></li>
+					<li><a href="#"><img src="images/search.png" alt=""></a></li>
+					<li><a href="#"> <img src="images/shoppingcart.svg" alt=""> </a></li>
 				</ul>
 			</nav>
 		</section>
@@ -49,15 +47,16 @@
 		</nav>
 
 		<section>
-			<button>
-				<</button> <marquee behavior="" direction="">
-					<ul>
-						<li>Gepersonaliseerde sieraden</li>
-						<li>Handgemaakt in Amsterdam</li>
-						<li>Gratis verzending vanaf €99,-</li>
-					</ul>
-					</marquee>
-					<button>></button>
+			<!-- unicode html-->
+			<button>&lsaquo;</button>
+			<marquee behavior="" direction="">
+				<ul>
+					<li>Gepersonaliseerde sieraden</li>
+					<li>Handgemaakt in Amsterdam</li>
+					<li>Gratis verzending vanaf €99,-</li>
+				</ul>
+			</marquee>
+			<button>&rsaquo;</button>
 		</section>
 	</header>
 
@@ -71,29 +70,30 @@
 		</section>
 
 		<section>
-			<h3>Best Sellers</h3>
-			<ul>
-				<li>
-					<h4>Populair</h4>
-					<p>Tilly Tennis Bracelet</p>
-					<p>Vanaf €149,00</p>
-					<img src="images/show_tennis_bracelet-silver_met_schaduw.webp" alt="Tilly Tennis Bracelet">
-				</li>
+			<h2>Best Sellers</h3>
+				<ul>
+					<li>
+						<h3>Tilly Tennis Bracelet</h3>
+						<p>Populair</p>
+						<p>Vanaf €149,00</p>
+						<img src="images/show_tennis_bracelet-silver_met_schaduw.webp" alt="Tilly Tennis Bracelet">
+					</li>
 
-				<li>
-					<h4>Populair</h4>
-					<p>Initial Coin Necklace</p>
-					<p>Vanaf €99,00</p>
-					<img src="images/initial_coin_necklace___rvl___gold.webp" alt="Initial Coin Necklace">
-				</li>
+					<li>
+						<h3>Initial Coin Necklace</h3>
+						<p>Populair</p>
+						<p>Vanaf €99,00</p>
+						<img src="images/initial_coin_necklace___rvl___gold.webp" alt="Initial Coin Necklace">
+					</li>
 
-				<li>
-					<h4>Populair</h4>
-					<p>Letter Necklace</p>
-					<p>Vanaf €179,00</p>
-					<img src="images/letter_necklace_vertical_4.webp" alt="Letter Necklace">
-				</li>
-			</ul>
+					<li>
+
+						<h3>Letter Necklace</h3>
+						<p>Populair</p>
+						<p>Vanaf €179,00</p>
+						<img src="images/letter_necklace_vertical_4.webp" alt="Letter Necklace">
+					</li>
+				</ul>
 		</section>
 
 		<section>
@@ -104,7 +104,7 @@
 				sieraden van armbanden met naam, kettingen met een initiaal tot aan ringen met een (geboorte) steen - en
 				nog veel
 				meer.</p>
-			<p><a href="#"> Ons verhaal</a></li>
+			<p><a href="#"> Ons verhaal</a>
 			</p>
 		</section>
 
@@ -114,36 +114,26 @@
 			<p>Gepersonaliseerde items voor de vaders, beste vrienden en geliefden in ons leven. Perfect voor een
 				cadeautje
 				en natuurlijk om voor jezelf te kopen.</p>
-			<p><a href="#">Ontdek nu</a></li>
-			</p>
+			<p><a href="#">Ontdek nu</a></p>
 		</section>
 
 		<section>
 			<img src="images/kids_1.webp" alt="De kidscollectie">
-			<h2>Kids collection</h2>
+			<h2>Kids Collection</h2>
 			<p>Twinning is winning met Vedder & Vedder haar meest iconische items in miniversie voor de kleintjes.</p>
-			<p><a href="#">Shop nu</a></li>
-			</p>
+			<p><a href="#">Shop nu</a></p>
 		</section>
-
-		<section>
-			<img src="#" alt="Trustpilot">
-			<h2>Goed</h2>
-			<p>Gebaseerd op 3.504 reviews</p>
-			<p><a href="https://www.trustpilot.com/review/www.vedder-vedder.com">Trustpilot</a></p>
-		</section>
-
+		<!-- misschien animaties -->
 
 		<section>
 			<h2>Explore your favourite styles and share your own</h2>
-			<img src="#" alt="Instagram">
-			<p>Meer inspiratie op onze instagram</p>
-			<p><a href="https://www.instagram.com/explore/tags/myvvstory/">#myvvstory</a></p>
+			<p>Meer inspiratie op onze instagram <a href="https://www.instagram.com/explore/tags/myvvstory/">#myvvstory</a></p>
+		
 			<ul>
-				<li><img src="#" alt="#"></li>
-				<li><img src="#" alt="#"></li>
-				<li><img src="#" alt="#"></li>
-				<li><img src="#" alt="#"></li>
+				<li><img src="images/instagramcontenteen.jpeg" alt="#"></li>
+				<li><img src="images/instagramcontenttwee.jpeg" alt="#"></li>
+				<li><img src="images/instagramcontentdrie.jpeg" alt="#"></li>
+	
 			</ul>
 		</section>
 
@@ -155,7 +145,7 @@
 
 	<footer>
 		<section>
-			<h3>Klantenservice</h2>
+			<h2>Klantenservice</h2>
 				<ul>
 					<li><a href="#">Veelgestelde vragen</a></li>
 					<li><a href="#">Ketting posities</a></li>
@@ -165,7 +155,7 @@
 		</section>
 
 		<section>
-			<h3>Informatie</h2>
+			<h2>Informatie</h2>
 				<ul>
 					<li><a href="#">Algemene voorwaarden</a></li>
 					<li><a href="#">V&V garantie</a></li>
@@ -175,7 +165,7 @@
 		</section>
 
 		<section>
-			<h3>Over V&V</h2>
+			<h2>Over V&V</h2>
 				<ul>
 					<li><a href="#">Over ons</a></li>
 					<li><a href="#">Atelier</a></li>
@@ -184,8 +174,8 @@
 				</ul>
 		</section>
 	</footer>
-	<script language="JavaScript" src="scripts/script.js">
-	</script>
+	<!-- alles eerst lezen en klaarzetten voordat de javascript wordt uit gelezen -->
+	<script defer src="scripts/script.js"></script>
 </body>
 
 </html>

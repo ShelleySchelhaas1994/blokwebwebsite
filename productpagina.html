@@ -13,17 +13,27 @@
 <body>
 	<header>
 		<section>
-			<button>
-				<</button> <ul>
-					<li>Gepersonaliseerde sieraden</li>
-					<li>Handgemaakt in Amsterdam</li>
-					<li>Gratis verzending vanaf €99,-</li>
-					</ul>
-					<button>></button>
+
+			<h1 aria-label="Welkom bij Vedder & Vedder">
+				<img src="images/logo.svg" alt="Vedder & Vedder logo">
+			</h1>
+
+			<!-- arialabel toevoegne, svg opzoeken hamburger + zoekbalk en winkelmandje  -->
+			<button><img src="images/hamburgermenu.svg" alt=""></button>
+
+			<nav>
+				<ul>
+					<li><a href="#"><img src="images/search.png" alt=""></a></li>
+					<li><a href="#"> <img src="images/shoppingcart.svg" alt=""> </a></li>
+				</ul>
+			</nav>
 		</section>
+
+		<!-- de schuifnav -->
+		<!-- los zodat die onder de eerste setion kan -->
 		<nav>
 			<ul>
-				<li><a href="#"> Alle producten </a></li>
+				<li><a href="#">Alle producten </a></li>
 				<li><a href="#">Kettingen</a></li>
 				<li><a href="#">Armbanden</a></li>
 				<li><a href="#">Ringen</a></li>
@@ -34,9 +44,20 @@
 				<li><a href="#">Dutch</a></li>
 				<li><a href="#">€Eur</a></li>
 			</ul>
-
-
 		</nav>
+
+		<section>
+			<!-- unicode html-->
+			<button>&lsaquo;</button>
+			<marquee behavior="" direction="">
+				<ul>
+					<li>Gepersonaliseerde sieraden</li>
+					<li>Handgemaakt in Amsterdam</li>
+					<li>Gratis verzending vanaf €99,-</li>
+				</ul>
+			</marquee>
+			<button>&rsaquo;</button>
+		</section>
 	</header>
 	<main>
 		<section>
@@ -45,8 +66,9 @@
 				<li><img src="images/birthstone_bracelet-1.webp" alt="Birthstone Bracelet met model"></li>
 				<li><img src="images/6birthstones_3x_5.webp" alt="Edelstenen"></li>
 			</ul>
-			<button>
-				<</button> <p><a href="index.html">Home </a></p>
+			<button>&lsaquo;</button>
+			<p><a href="index.html">Home </a>
+				<button>&rsaquo;</button></p>
 		</section>
 
 		<section>
@@ -70,6 +92,38 @@
 		</section>
 	</main>
 
+	<footer>
+		<section>
+			<h3>Klantenservice</h2>
+				<ul>
+					<li><a href="#">Veelgestelde vragen</a></li>
+					<li><a href="#">Ketting posities</a></li>
+					<li><a href="#">Hoe maak je een vingerafdruk</a></li>
+					<li><a href="#">Maattabel</a></li>
+				</ul>
+		</section>
+
+		<section>
+			<h3>Informatie</h2>
+				<ul>
+					<li><a href="#">Algemene voorwaarden</a></li>
+					<li><a href="#">V&V garantie</a></li>
+					<li><a href="#">Ruil & retourvoorwaarden</a></li>
+					<li><a href="#">Actievoorwaarden</a></li>
+				</ul>
+		</section>
+
+		<section>
+			<h3>Over V&V</h2>
+				<ul>
+					<li><a href="#">Over ons</a></li>
+					<li><a href="#">Atelier</a></li>
+					<li><a href="#">Showroom afspraak</a></li>
+					<li><a href="#">Vacatures</a></li>
+				</ul>
+		</section>
+	</footer>
+	<script defer src="scripts/script.js"></script>
 </body>
 
 </html>

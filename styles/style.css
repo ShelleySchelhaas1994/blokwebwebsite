@@ -1,3 +1,8 @@
+/**************/
+/* FONTS */
+/**************/
+
+
 @font-face {
 	font-family: "Mabry";
 	src: url("../fonts/mabry-light.otf") format("truetype")
@@ -8,6 +13,10 @@
 	src: url("../fonts/mabry-bold-pro.otf") format("truetype")
 }
 
+@font-face {
+	font-family: "Andellia Davilton";
+	src: url(../fonts/Andellia\ Davilton.otf) format("truetype");
+}
 
 /**************/
 /* CSS REMEDY */
@@ -20,11 +29,6 @@
 	margin: 0;
 }
 
-button,
-summary {
-	cursor: pointer;
-}
-
 
 
 
@@ -33,14 +37,26 @@ summary {
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
-	/* startje */
+	/* kleuren */
 	--color-text: #666666;
+	--color-text-white: #ffffff;
+	--color-text-black: #000000;
+	--color-text-pink: #eeb8c6;
 	--color-header: #111;
-	--color-background: #white;
+	--color-tags: #f29eba;
+	--color-background: #ffffff;
+	--color-background-menu-images: #f8f7f4;
+
+	--color-header-reclame: #b2596d;
+	--color-header-reclame-text: #ffffff;
+
+	--color-underline-link: #b2596d;
+
+	/* fonts */
 	--type-font-headers: "Mabry Bold";
 	--type-font-regular-text: "Mabry";
+	--type-font-special-headers: "Andellia Davilton"
 }
-
 
 
 
@@ -53,15 +69,23 @@ summary {
 body {
 	color: var(--color-text);
 	background-color: var(--color-background);
-	font-family: "Mabry", Helvetica, Arial, sans-serif;
+	font-family: var(--type-font-regular-text), Helvetica, Arial, sans-serif;
 }
+
+
+button,
+summary {
+	cursor: pointer;
+}
+
 
 img {
 	max-width: 100%;
 }
 
+
 a {
-	color: black;
+	color: var(--color-text-black);
 	text-decoration: none;
 	text-transform: uppercase;
 }
@@ -80,8 +104,6 @@ h3 {
 	color: var(--color-header);
 	font-family: var(--type-font-headers);
 	text-transform: uppercase;
-
-
 }
 
 p,
@@ -135,12 +157,10 @@ header section:nth-of-type(1) {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	/* flex-direction: row; is de default */
-	/* justify-content: flex-start; */
 	gap: 1em;
 	align-items: center;
 
-	background-color: white;
+	background-color: var(--color-background);
 }
 
 
@@ -151,7 +171,7 @@ header section:nth-of-type(1) {
 /************/
 
 header section:nth-of-type(1) h1 img {
-	height: .4em;
+	height: .6em;
 }
 
 
@@ -168,17 +188,13 @@ header section:nth-of-type(1) button {
 	/* vooraan */
 	padding: .5em;
 
-	/* display: flex; */
-	/* align-items: center; */
-	/* gap: .25em; */
-
 	appearance: none;
-	background-color: white;
+	background-color: var(--color-background);
 	border: none;
 	border-radius: .25em;
 	font: inherit;
-	/* text-align: center; */
-	/* color: black; */
+
+	width: 3.5em;
 }
 
 
@@ -188,8 +204,6 @@ header>nav ul {
 	position: absolute;
 	/* positioneren tov de header */
 	top: 100%;
-	/* preceis onder de header */
-	/* bottom: 0; - niet nodig dat is het menu zo hoog als het is */
 	left: 0;
 	right: 0;
 
@@ -201,14 +215,19 @@ header>nav ul {
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
-	/* align-content: start; */
 
-	background-color: #f8f7f4;
+	background-color: var(--color-background-menu-images);
 	text-transform: uppercase;
 
 	transform: translateY(-100%);
 	transition: 1s;
+
 }
+
+header section:nth-of-type(1) nav ul li {
+	width: 3.5em;
+}
+
 
 /* hier staat nu nog ul achter */
 header>nav.menuGeopend ul {
@@ -222,9 +241,13 @@ header section:nth-of-type(1) nav ul {
 	list-style: none;
 
 	display: flex;
-	gap: 1em;
 	align-items: center;
 }
+
+
+
+
+
 
 /***********************/
 /* SECTION 2 = RECLAME */
@@ -238,19 +261,19 @@ header section:nth-of-type(2) {
 
 header section:nth-of-type(2) button {
 	appearance: none;
-	background-color: white;
+	background-color: var(--color-background);
 	border: none;
 	border-radius: .25em;
 	font: inherit;
 	text-align: center;
-	color: black;
+	color: var(--color-text-black)
 }
 
 header section:nth-of-type(2) {
 	padding: 0px 4em;
-	background-color: #b2596d;
+	background-color: var(--color-header-reclame);
 	font-size: 0.7em;
-	color: white;
+	color: var(--color-header-reclame-text);
 	text-transform: uppercase;
 
 	display: flex;
@@ -269,12 +292,10 @@ header section:nth-of-type(2) ul {
 
 header section:nth-of-type(2) button {
 	padding: 0 2em;
-	background-color: #b2596d;
-	color: white;
+
+	background-color: var(--color-header-reclame);
+	color: var(--color-text-white);
 }
-
-
-
 
 
 
@@ -285,9 +306,10 @@ header section:nth-of-type(2) button {
 /****************/
 
 
-main {}
-
+/*********************/
 /* SECTION 1 = NEW */
+/*********************/
+
 
 main section:nth-of-type(1) {
 	display: grid;
@@ -297,10 +319,11 @@ main section:nth-of-type(1) {
 main section:nth-of-type(1) h2 {
 	padding: 0em;
 
-	font-family: 'Nanum Myeongjo', serif;
+	font-family: var(--type-font-special-headers);
 	text-transform: none;
 	font-weight: lighter;
-	font-size: 2em;
+	font-size: 3em;
+	opacity: .8;
 
 	grid-row-start: 1;
 	grid-column-start: 1;
@@ -322,10 +345,10 @@ main section:nth-of-type(1) p {
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
 
 	font-family: var(--type-font-headers);
-	color: black;
+	color: var(--color-text-black);
 	text-transform: uppercase;
 	font-size: .8em;
-	background-color: white;
+	background-color: var(--color-background);
 
 	place-self: center;
 
@@ -337,16 +360,19 @@ main section:nth-of-type(1) p {
 
 
 
+/*********************/
 /* SECTION 2 = BESTSELLERS */
+/*********************/
 
-main h3 {
+main section:nth-of-type(2) {
+	margin: 0em 0 3em;
+}
+
+main section:nth-of-type(2) li p:nth-of-type(1) {
 	text-transform: uppercase;
 	font-size: 1.5em;
 	padding: 1.5em 1.2em;
-
 }
-
-main section:nth-of-type(2) {}
 
 
 main section:nth-of-type(2) ul {
@@ -355,40 +381,24 @@ main section:nth-of-type(2) ul {
 	overflow-x: auto;
 }
 
+
 main section:nth-of-type(2) li {
 	flex-shrink: 0;
 	flex-basis: 70%;
 
 	display: grid;
-	grid-template-rows: 14em 1fr 1fr;
-}
-
-main section:nth-of-type(2) li h4 {
-	margin: 1em;
-	padding: .3em;
-	background-color: #f29eba;
-	font-family: var(--type-font-headers);
-	font-size: .7em;
-	text-transform: uppercase;
-	color: black;
-	border-radius: 1.2em;
-
-	grid-row-start: 1;
-	grid-column-start: 1;
-	z-index: 90;
-
-	align-self: center;
-	justify-self: center;
-	text-align: center;
+	grid-template-rows: 1fr min-content min-content;
 }
 
 
-main section:nth-of-type(2) li p:nth-of-type(1) {
+main section:nth-of-type(2) h3 {
 	padding: 0;
-	
+	margin: 1em 0em 0em;
+
 	font-family: var(--type-font-headers);
 	font-size: .9em;
-	color: black;
+	color: var(--color-text-black);
+	text-transform: none;
 
 	grid-row-start: 2;
 	grid-column-start: 1;
@@ -396,25 +406,125 @@ main section:nth-of-type(2) li p:nth-of-type(1) {
 
 	justify-content: start;
 	align-self: top;
+}
 
+
+main section:nth-of-type(2) li p:nth-of-type(1) {
+	margin: 1em;
+	padding: .3em 1em;
+
+	font-family: var(--type-font-headers);
+	font-size: .7em;
+	text-transform: uppercase;
+	color: var(--color-text-black);
+
+	background-color: var(--color-tags);
+	border-radius: 1.2em;
+
+	grid-row-start: 1;
+	grid-column-start: 1;
+	z-index: 90;
+
+	justify-self: start;
+	align-self: start;
 }
 
 
 main section:nth-of-type(2) li p:nth-of-type(2) {
 	padding: 0;
 
+	font-size: .9em;
+	color: var(--color-text-black);
+
 	grid-row-start: 3;
 	grid-column-start: 1;
-
-	font-size: .9em;
-	color: black;
-
 	z-index: 90;
 }
 
 main section:nth-of-type(2) li img {
-	grid-area: 1/1/4/2;
-	background-color: #f9f7f1;
+	width: 100%;
+	height: 100%;
+
+	background-color: var(--color-background-menu-images);
+
+	object-fit: contain;
+	object-position: center top;
+
+	grid-area: 1/1/2/2;
+	align-self: stretch;
+}
+
+
+/*********************/
+/*  SECTION 3 - 7
+LINK UNDERLINE - BRON SANNE
+/*********************/
+
+main section:nth-child(n+3) p:nth-of-type(2) {
+	position: relative;
+	width: fit-content;
+
+	font-size: .8em;
+	font-family: var(--type-font-headers);
+	letter-spacing: .1em;
+}
+
+main section:nth-child(n+3) p:nth-of-type(2)::before {
+	content: "";
+	position: absolute;
+
+	left: 0;
+	right: 0;
+	bottom: .6em;
+
+	height: .25em;
+
+	background-color: var(--color-underline-link);
+	border-radius: .125em;
+
+	transform-origin: right;
+	transform: scalex(0);
+	transition: transform .3s;
+}
+
+main section:nth-child(n+3) p:nth-of-type(2):visited {
+	color: var(--color-underline-link);
+}
+
+main section:nth-child(n+3) p:nth-of-type(2):focus-visible {
+	background: var(--color-underline-link);
+}
+
+main section:nth-child(n+3) p:nth-of-type(2):hover::before {
+	transform-origin: left;
+	transform: scalex(1);
+}
+
+main section:nth-child(n+3) p:nth-of-type(2):active {
+	color: var(--color-header);
+}
+
+
+/*********************/
+/*  SECTION 3 = ONS VERHAAL */
+/*********************/
+
+main section:nth-of-type(3) h2 {
+	font-size: 1.9em;
+	line-height: 1em;
+}
+
+main section:nth-of-type(3) p:nth-of-type(1) {
+	padding: 0 1.8em 0;
+	margin: 0 0 1.5em;
+}
+
+
+main section:nth-child(3) p:nth-of-type(2) {
+	padding:0;
+	padding-bottom: 1em;
+	margin-left: 2.1em;
+	margin-bottom: 7em;
 }
 
 
@@ -422,36 +532,136 @@ main section:nth-of-type(2) li img {
 
 
 
+/*********************/
+/* SECTION 4 = VOOR HEM  */
+/*********************/
+
+main section:nth-of-type(4) {
+	text-align: center;
+}
+
+main section:nth-of-type(4) h2+p {
+	margin-top: .5em;
+	padding: 0em 4em 2em;
+}
+
+main section:nth-of-type(4) h2 {
+	padding: 1.5em 0em 1em;
+
+	font-size: 1.6em;
+}
+
+main section:nth-child(4) p:nth-of-type(2) {
+	padding:0;
+	padding-bottom: 1em;
+	margin-bottom: 7em;
+	margin-left: 40%;
+
+
+}
 
 
 
+/*********************/
+/* SECTION 5 = KIDS  */
+/*********************/
 
-/* SECTION 3 = ONS VERHAAL */
+main section:nth-of-type(5) h2 {
+	padding: 1.2em 0.7em 0em;
 
-main section:nth-of-type(3) {}
+	font-family: var(--type-font-special-headers);
+	font-size: 2.5em;
+	font-weight: 100;
+	text-transform: none;
+	color: var(--color-text-pink);
+}
 
-/* SECTION 4 = VOOR HEM */
-
-main section:nth-of-type(4) {}
-
-/* SECTION 5 = KIDS */
-
-main section:nth-of-type(5) {}
-
-/* SECTION 6 = TRUSTPILOT */
-
-main section:nth-of-type(6) {}
-
-
-
+main section:nth-of-type(5) p:nth-of-type(1) {
+	padding: 1.8em;
+}
 
 
+main section:nth-of-type(5) p:nth-of-type(2) {
+	padding:0;
+	padding-bottom: 1em;
+	margin-left: 2.1em;
+	margin-bottom: 10em;
+}
 
+main section:nth-of-type(5) img {
+	margin: 0em 4em 0em;
+	max-width: 60%;
 
+}
 
+/*********************/
+/* SECTION 6 = INSTAGRAM */
+/*********************/
+main section:nth-of-type(6) h2 {
+	text-align: center;
+}
+
+main section:nth-of-type(6) p {
+	text-align: center;
+}
+
+main section:nth-of-type(6) p a {
+	border-bottom: .2em solid var(--color-underline-link);
+	font-size: .8em;
+	font-family: var(--type-font-headers);
+	letter-spacing: .1em;
+}
+
+main section:nth-of-type(6) ul {
+	display: flex;
+	justify-content: space-between;
+	overflow-x: auto;
+}
+
+main section:nth-of-type(6) ul li {
+	flex-shrink: 0;
+	flex-basis: 70%;
+}
+
+/*********************/
+/* SECTION 7 = HANDGEMAATE SIERADEN */
+/*********************/
+main section:nth-of-type(7) h2 {
+	padding: 2em 0em 0.1em;
+	text-align: center;
+
+	font-size: 1.3em;
+	letter-spacing: 1px;
+}
+
+main section:nth-of-type(7) p {
+	margin-bottom: 2em;
+	text-align: center;
+}
 
 /****************/
 /* FOOTER */
 /****************/
 
-footer {}
+footer {
+	background-color: #fff6e8;
+}
+
+footer section h2 {
+	padding-bottom: .2em;
+	margin: 0;
+	font-size: 1em;
+	letter-spacing: 1px;
+
+}
+
+footer section li {
+	margin: 0;
+	padding: 0;
+	line-height: 2.5em;
+	font-size: .9em;
+}
+
+footer section li a {
+	text-transform: none;
+}

@@ -1,6 +1,6 @@
 
 
-	/* function voor openen en sluiten van menu mobile size */
+/* function voor openen en sluiten van menu mobile size */
 
 var deButton = document.querySelector("header section:nth-of-type(1) button");
 
