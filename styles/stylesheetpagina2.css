@@ -1,0 +1,331 @@
+/**************/
+/* FONTS */
+/**************/
+
+
+@font-face {
+	font-family: "Mabry";
+	src: url("../fonts/mabry-light.otf") format("truetype")
+}
+
+@font-face {
+	font-family: "Mabry Bold";
+	src: url("../fonts/mabry-bold-pro.otf") format("truetype")
+}
+
+@font-face {
+	font-family: "Andellia Davilton";
+	src: url(../fonts/Andellia\ Davilton.otf) format("truetype");
+}
+
+/**************/
+/* CSS REMEDY */
+/**************/
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	/* kleuren */
+	--color-text: #666666;
+	--color-text-white: #ffffff;
+	--color-text-black: #000000;
+	--color-text-pink: #eeb8c6;
+	--color-header: #111;
+	--color-tags: #f29eba;
+	--color-background: #ffffff;
+	--color-background-menu-images: #f8f7f4;
+
+	--color-header-reclame: #b2596d;
+	--color-header-reclame-text: #ffffff;
+
+	--color-underline-link: #b2596d;
+
+	/* fonts */
+	--type-font-headers: "Mabry Bold";
+	--type-font-regular-text: "Mabry";
+	--type-font-special-headers: "Andellia Davilton"
+}
+
+
+
+
+
+/****************/
+/* JOUW STYLING */
+/****************/
+
+body {
+	color: var(--color-text);
+	background-color: var(--color-background);
+	font-family: var(--type-font-regular-text), Helvetica, Arial, sans-serif;
+	margin: 0;
+}
+
+
+button,
+summary {
+	cursor: pointer;
+}
+
+
+img {
+	max-width: 100%;
+}
+
+
+a {
+	color: var(--color-text-black);
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+
+li {
+	text-decoration: none;
+	list-style: none;
+	appearance: none;
+}
+
+h2,
+h3 {
+	padding: 1em;
+
+	color: var(--color-header);
+	font-family: var(--type-font-headers);
+	text-transform: uppercase;
+}
+
+p,
+ul,
+li {
+	padding: 1em;
+
+	font-family: var(--type-font-regular-text);
+	color: var(--color-text-regulartext);
+	font-size: 1em;
+	line-height: 1.8em;
+}
+
+
+
+
+/****************/
+/* HEADER */
+/****************/
+
+header {
+	/* om de schuivende nav binnen de header te kunnen positioneren */
+	/* position: relative; - wordt overschreven door sticky */
+	position: sticky;
+	top: 0;
+	z-index: 100;
+
+	/* min-height: 4em; - niet nodig*/
+
+	display: flex;
+	flex-direction: column-reverse;
+
+	box-shadow: 0 3px 10px rgb(0 0 0 / .1);
+	/* hier beter */
+}
+
+
+
+
+/********************/
+/* LOGO & DE MENU"S */
+/********************/
+
+/* de container van de 2e nav en het logo */
+header section:nth-of-type(1) {
+	font-size: 0.7em;
+	z-index: 100;
+	/* boven het uitschuifmenu */
+	padding: .5em;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1em;
+	align-items: center;
+
+	background-color: var(--color-background);
+}
+
+
+
+
+/************/
+/* HET LOGO */
+/************/
+
+header section:nth-of-type(1) h1 img {
+	height: .6em;
+}
+
+
+
+
+/**************************/
+/* MENU OPENEN/SLUITEN */
+/**************************/
+
+/* de button */
+header section:nth-of-type(1) button {
+	order: -1;
+	padding: .5em;
+
+	appearance: none;
+	background-color: var(--color-background);
+	border: none;
+	border-radius: .25em;
+	font: inherit;
+
+	width: 3.5em;
+}
+
+
+/* het menu - dat schuift */
+/* los niet meer in de eerste section */
+header>nav ul {
+	position: absolute;
+	/* positioneren tov de header */
+	top: 100%;
+	left: 0;
+	right: 0;
+
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+
+	background-color: var(--color-background-menu-images);
+	text-transform: uppercase;
+
+	transform: translateY(-100%);
+	transition: 1s;
+}
+
+header section:nth-of-type(1) nav ul li {
+	width: 3.5em;
+}
+
+
+header>nav.menuGeopend ul {
+	transform: translateY(0%);
+}
+
+/* het service menu - aan de rechterkant */
+header section:nth-of-type(1) nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	display: flex;
+	align-items: center;
+}
+
+
+
+
+
+
+/***********************/
+/* SECTION 2 = RECLAME */
+/***********************/
+
+header section:nth-of-type(2) {
+	/* boven het menu */
+	position: relative;
+	z-index: 100;
+}
+
+header section:nth-of-type(2) button {
+	appearance: none;
+	background-color: var(--color-background);
+	border: none;
+	border-radius: .25em;
+	font: inherit;
+	text-align: center;
+	color: var(--color-text-black)
+}
+
+header section:nth-of-type(2) {
+	padding: 0px 4em;
+	background-color: var(--color-header-reclame);
+	font-size: 0.7em;
+	color: var(--color-header-reclame-text);
+	text-transform: uppercase;
+
+	display: flex;
+	justify-content: space-around;
+}
+
+header section:nth-of-type(2) ul {
+	padding: 0em 1em;
+	list-style: none;
+	font-size: .9em;
+
+	display: flex;
+	gap: 10em;
+	justify-content: space-between;
+}
+
+header section:nth-of-type(2) button {
+	padding: 0 2em;
+
+	background-color: var(--color-header-reclame);
+	color: var(--color-text-white);
+}
+
+
+
+
+
+/****************/
+/* MAIN */
+/****************/
+/* 
+------ invullen!! */
+
+/****************/
+/* FOOTER */
+/****************/
+
+footer {
+	background-color: #fff6e8;
+}
+
+footer section h2 {
+	padding-bottom: .2em;
+	margin: 0;
+	font-size: 1em;
+	letter-spacing: 1px;
+
+}
+
+footer section li {
+	margin: 0;
+	padding: 0;
+	line-height: 2.5em;
+	font-size: .9em;
+}
+
+footer section li a {
+	text-transform: none;
+}

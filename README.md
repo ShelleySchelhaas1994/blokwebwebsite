@@ -110,7 +110,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor 1e voortgang</summary>
 
   ### Stand van zaken
-De verwachting ging beter dan gedacht bij mijn eerste voortgang. Vanaf het begin ben ik gestart met mijn HTML en ben nu begonnen met mijn CSS. Ik merk dat ik soms moeten heb met de verschillende selectoren en het omdraaen van volgordes. 
+De verwachting ging beter dan gedacht bij mijn eerste voortgang. Vanaf het begin ben ik gestart met mijn HTML en ben nu begonnen met mijn CSS. Ik merk dat ik soms moeite heb met de verschillende selectoren en het omdraaien van volgordes van de HTML in CSS. 
 
 
   ### Agenda voor meeting
@@ -121,7 +121,7 @@ De verwachting ging beter dan gedacht bij mijn eerste voortgang. Vanaf het begin
   - Karenza: Geen vragen
 
   ### Verslag van meeting
-  - Goede voortgang, verder gaan met het menu maken en javascript neerzetten. 
+  - Goede voortgang, verder gaan met het hamburgermenu maken en Javascript inzetten. 
   - H1 maar eenmalig gebruiken 
   - Gebruik maken van Aria Labels. 
 
@@ -219,16 +219,15 @@ De verwachting ging beter dan gedacht bij mijn eerste voortgang. Vanaf het begin
   <summary>uitwerken voor 3e voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
-
+  Pagina 1 is zo goed als af qua styling, ik moet alleen nog aan de bak met surface plane en/of responsive. Ik ben begonnen met de tweede pagina, maar hier loop ik even vast met het carouselletje, ik ben meerdere youtube video's aan het kijken maar kom er niet uit dit op te lossen zonder een class en/of div te gebruiken wanneer ik javascript in zou willen zetten.  
 
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  - Elaine:
-  - Shelley:
-  - Karenza: 
-  - Lisanne: 
+  - Elaine: Hoe link je een a href naar een section zonder class/id voor skip content
+  - Shelley: Mag ik voor de carousel van mijn productpagina (column carousel) gebruik maken van  div & class? Ik heb tutorials online gekeken en kom er niet uit aangezien ze dit overal toevoegen (https://www.youtube.com/watch?v=9HcxHDS2w1s&ab_channel=WebDevSimplified)
+  - Karenza: Graag extra verduidelijking CSS grid & flexbox + fonts. 
+  - Lisanne: - gestopt - 
 
 
   ### Verslag van meeting
@@ -277,7 +276,7 @@ De verwachting ging beter dan gedacht bij mijn eerste voortgang. Vanaf het begin
 
   Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 
-  1. Sanne van 't Hoofd - Front End Development leraar (hulp bij hambureger menu, grid en de link met underline)
+  1. Sanne van 't Hoofd - Front End Development leraar (hulp bij hamburger menu, grid en de link met underline)
   2. bron 2
   3. ...
 
