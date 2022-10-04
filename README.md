@@ -225,7 +225,7 @@ De verwachting ging beter dan gedacht bij mijn eerste voortgang. Vanaf het begin
   samen met je groepje opstellen
 
   - Elaine: Hoe link je een a href naar een section zonder class/id voor skip content
-  - Shelley: Mag ik voor de carousel van mijn productpagina (column carousel) gebruik maken van  div & class? Ik heb tutorials online gekeken en kom er niet uit aangezien ze dit overal toevoegen (https://www.youtube.com/watch?v=9HcxHDS2w1s&ab_channel=WebDevSimplified)
+  - Shelley: Mag ik voor de carousel van mijn productpagina (column carousel) gebruik maken van  div & class? Ik heb tutorials online gekeken en kom er niet uit aangezien ze dit overal toevoegen (https://www.youtube.com/watch?v=9HcxHDS2w1s&ab_channel=WebDevSimplified). 
   - Karenza: Graag extra verduidelijking CSS grid & flexbox + fonts. 
   - Lisanne: - gestopt - 
 

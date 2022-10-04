@@ -42,6 +42,7 @@
 	--color-text-white: #ffffff;
 	--color-text-black: #000000;
 	--color-text-pink: #eeb8c6;
+	--color-text-light-grey: #cecece;
 	--color-header: #111;
 	--color-tags: #f29eba;
 	--color-background: #ffffff;
@@ -51,6 +52,7 @@
 	--color-header-reclame-text: #ffffff;
 
 	--color-underline-link: #b2596d;
+	--color-underline-light-grey: #cecece;
 
 	/* fonts */
 	--type-font-headers: "Mabry Bold";
@@ -310,6 +312,7 @@ header section:nth-of-type(2) button {
 /*********************/
 
 
+
 main section:nth-of-type(1) {
 	display: grid;
 	grid-template-rows: 1fr 5em;
@@ -339,8 +342,8 @@ main section:nth-of-type(1) img {
 }
 
 main section:nth-of-type(1) p {
-	padding: .4em .4em .4em;
-	margin: 1em 1em 1em 1em;
+	padding: .4em 1em .4em;
+	/* margin: 1em 1em 1em 1em; */
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
 
 	font-family: var(--type-font-headers);
@@ -520,7 +523,7 @@ main section:nth-of-type(3) p:nth-of-type(1) {
 
 
 main section:nth-child(3) p:nth-of-type(2) {
-	padding:0;
+	padding: 0;
 	padding-bottom: 1em;
 	margin-left: 2.1em;
 	margin-bottom: 7em;
@@ -551,7 +554,7 @@ main section:nth-of-type(4) h2 {
 }
 
 main section:nth-child(4) p:nth-of-type(2) {
-	padding:0;
+	padding: 0;
 	padding-bottom: 1em;
 	margin-bottom: 7em;
 	margin-left: 40%;
@@ -581,7 +584,7 @@ main section:nth-of-type(5) p:nth-of-type(1) {
 
 
 main section:nth-of-type(5) p:nth-of-type(2) {
-	padding:0;
+	padding: 0;
 	padding-bottom: 1em;
 	margin-left: 2.1em;
 	margin-bottom: 10em;
@@ -623,7 +626,7 @@ main section:nth-of-type(6) ul li {
 }
 
 /*********************/
-/* SECTION 7 = HANDGEMAATE SIERADEN */
+/* SECTION 7 = HANDGEMAAKTE SIERADEN */
 /*********************/
 main section:nth-of-type(7) h2 {
 	padding: 2em 0em 0.1em;

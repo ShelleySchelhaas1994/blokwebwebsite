@@ -13,11 +13,9 @@
 <body>
 	<header>
 		<section>
-
 			<h1 aria-label="Welkom bij Vedder & Vedder">
 				<img src="images/logo.svg" alt="Vedder & Vedder logo">
 			</h1>
-
 			<!-- arialabel toevoegne, svg opzoeken hamburger + zoekbalk en winkelmandje  -->
 			<button><img src="images/hamburgermenu.svg" alt=""></button>
 
@@ -61,38 +59,142 @@
 	</header>
 	<main>
 		<section aria-label="Foto's van Birthstone Bracelet">
-			<div class></div>
-			<button>&#8657;</button>
-			<button>&#8659;</button></p>
-			<ul>
-				<li><img src="images/birthstone_bracelet_4.webp" alt="Birthstone Bracelet"></li>
-				<li><img src="images/birthstone_bracelet-1.webp" alt="Birthstone Bracelet met model"></li>
-				<li><img src="images/6birthstones_3x_5.webp" alt="Edelstenen"></li>
-			</ul>
-			
-			<p><a href="index.html">Home </a>
+			<div class="carousel" data-carousel>
+				<button data-carousel-button="prev">&lsaquo;</button>
+				<button data-carousel-button="next">&rsaquo;</button>
+				<ul data-slides>
+					<li class="slide" data-active><img src="images/birthstone_bracelet_4.webp"
+							alt="Birthstone Bracelet"></li>
+					<li class="slide"><img src="images/birthstone_bracelet-1.webp" alt="Birthstone Bracelet met model">
+					</li>
+					<li class="slide"><img src="images/6birthstones_3x_5.png" alt="Edelstenen"></li>
+				</ul>
+			</div>
+			<a href="index.html"> &lsaquo; Home </a>
 		</section>
 
 		<section>
 			<h2>Birthstone Bracelet</h2>
 			<h3>€179</h3>
-			<h4>Materiaal</h4>
-			<ul>
-				<li>Massief 9k geel</li>
-				<li>Massief 14k geel goud</li>
-				<li>Massief 9k wit</li>
-				<li>Massief 14k wit goud</li>
-			</ul>
+
+			<label for="Materiaal-select">Materiaal</label>
+
+			<select name="Materialen" id="Materiaal-select">
+				<option value="">Kies een optie....</option>
+				<option value="zilver">Zilver</option>
+				<option value="verguld">Verguld</option>
+				<option value="9k massief">9k massief geel</option>
+				<option value="14k massief geel goud">14k massief geel goud</option>
+			</select>
+
+			<label for="Maat-select">Maat</label>
+
+			<select name="Materialen" id="Materiaal-select">
+				<option value="">Kies een optie....</option>
+				<option value="Small">Small 15 cm</option>
+				<option value="Medium">Medium 16 cm</option>
+				<option value="Large">Large 17 cm</option>
+				<option value="Extra large">Extra large 18 cm</option>
+			</select>
+
+			<a href="#">Choose your options</a>
+
+			<p>De Birthstone Bracelet is verkrijgbaar in 9K of massief 14k goud en met de hand gemaakt in ons Vedder &
+				Vedder Atelier. Deze armband is helemaal te personaliseren met één of meerdere geboortestenen. Zo heb je
+				al je dierbare herinneringen aan een armband, met ruimte en de mogelijkheid tot uitbreiding. </p>
+			<p>Door de
+				natuurlijke eigenschappen van edelstenen kan de kleur per steen afwijken.</p>
 
 			<ul>
-				<h4>Maat</h4>
-				<li>Small: 15 cm</li>
-				<li>Medium: 16</li>
-				<li>Large: 17cm</li>
-				<li>Xtra large: 18cm</li>
+				<li><a href="#"> Op verlanglijstje</a></li>
+				<li><a href="#"> Stuur een hint</a></li>
 			</ul>
+
+			<details>
+				<summary>Productie tijd</summary>
+				<p>Wil je weten wanneer je je product in huis hebt, bekijk dan onze levertijden.</p>
+			</details>
+
+			<details>
+				<summary>Materialen</summary>
+				<p>Verkrijgbaar in 9K geel, wit of rosé en massief 14K geel-, wit-, of roségoud. Elk sieraad is
+					handgemaakt, gepersonaliseerd en ingepakt met liefde in ons atelier in Amsterdam.</p>
+				<p>9K/375: Een 9K sieraad bevat minder goud dan een 14K massief gouden sieraad. Vanwege de relatief lage
+					kosten zijn 9K sieraden een goed alternatief voor onze 14K gouden lijn en zullen deze niet
+					verkleuren tijdens het douchen of zwemmen.
+				</p>
+				<p>14K Goud/585: We werken met 14K massief goud, dit zal niet verkleuren tijdens het douchen of zwemmen
+					en niet afgeven.</p>
+			</details>
+
+			<details>
+				<summary>Afmetingen</summary>
+				<ul>
+					<li>Diameter steen zetting: 2,5mm.</li>
+					<li>Deze armband heeft een verlengstukje van 2cm.</li>
+				</ul>
+			</details>
 		</section>
+
+		<section>
+			<h2>Gerelateerde producten</h2>
+			<ul>
+				<li>
+					<h3>Tilly Tennis Bracelet</h3>
+					<p>Populair</p>
+					<p>Vanaf €149,00</p>
+					<img src="images/show_tennis_bracelet-silver_met_schaduw.webp" alt="Tilly Tennis Bracelet">
+				</li>
+
+				<li>
+					<h3>Initial Coin Necklace</h3>
+					<p>Populair</p>
+					<p>Vanaf €99,00</p>
+					<img src="images/initial_coin_necklace___rvl___gold.webp" alt="Initial Coin Necklace">
+				</li>
+
+				<li>
+
+					<h3>Letter Necklace</h3>
+					<p>Populair</p>
+					<p>Vanaf €179,00</p>
+					<img src="images/letter_necklace_vertical_4.webp" alt="Letter Necklace">
+				</li>
+			</ul>
+
+		</section>
+
+
+		<section>
+			<h2>Vedder & Vedder garantie</h2>
+			<p>We begrijpen dat onze (veelal gepersonaliseerde) sieraden een persoonlijk verhaal vertellen en je ze
+				daarom zo veel mogelijk (bij je) draagt. Mochten de sieraden verkleuren binnen 4 maanden, dan hebben we
+				een plating service beschikbaar. Mocht er iets anders mis zijn met de sieraden, dan hebben we een
+				garantieperiode van 6 maanden voor vergulde sieraden en een jaar voor massief gouden sieraden.</p>
+			<p><a href="#">Lees verder</a></p>
+		</section>
+
+		<section>
+			<h2>Hoogwaardige materialen</h2>
+			<p>Bij Vedder & Vedder werken we alleen met materialen van hoogwaardige kwaliteit. Van onze
+				gepersonaliseerde zilveren en gouden kettingen tot onze geboortestenen en diamanten. Onze persoonlijke
+				sieraden zijn gemaakt om elke dag je dierbaren dichtbij je te dragen. Tips en tricks over hoe je onze
+				sieraden zo mooi mogelijk houdt, vind je hier.</p>
+			<p><a href="#">Lees verder</a></p>
+		</section>
+
+
+		<section>
+			<h2>Ons Vedder & Vedder atelier</h2>
+			<p>Gepersonaliseerde sieraden, met de hand gemaakt door een team van kundige, vrouwelijke goudsmeden in ons
+				eigen Vedder & Vedder atelier. Toen we net begonnen met Vedder & Vedder hadden we enkel kunnen dromen
+				over een team van vrouwen die dag in, dag uit samen met ons zouden werken aan onze passie: het maken van
+				persoonlijke sieraden.</p>
+			<p><a href="#">Lees verder</a></p>
+		</section>
+
 	</main>
+
 
 	<footer>
 		<section>
@@ -123,6 +225,20 @@
 					<li><a href="#">Showroom afspraak</a></li>
 					<li><a href="#">Vacatures</a></li>
 				</ul>
+		</section>
+
+		<section>
+			<h3>Meld je aan voor onze nieuwsbrief</h3>
+			<p>Word V&V VIP member en ontvang 10% korting!</p>
+			<ul>
+				<li>
+					<form action="#">
+						<label for="emailadres"></label>
+						<input type="text" id="fname" name="fname" value="Voer je email in"></form>
+				</li>
+				<li> <button>Inschrijven</button></li>
+			
+			</ul>
 		</section>
 	</footer>
 	<script defer src="scripts/script.js"></script>

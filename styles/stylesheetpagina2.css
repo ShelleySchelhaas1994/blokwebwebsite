@@ -42,15 +42,19 @@
 	--color-text-white: #ffffff;
 	--color-text-black: #000000;
 	--color-text-pink: #eeb8c6;
+	--color-text-light-grey: #cecece;
+
 	--color-header: #111;
 	--color-tags: #f29eba;
 	--color-background: #ffffff;
 	--color-background-menu-images: #f8f7f4;
+	--color-background-product: #fff6e8;
 
 	--color-header-reclame: #b2596d;
 	--color-header-reclame-text: #ffffff;
 
 	--color-underline-link: #b2596d;
+	--color-underline-light-grey: #cecece;
 
 	/* fonts */
 	--type-font-headers: "Mabry Bold";
@@ -100,14 +104,14 @@ li {
 
 h2,
 h3 {
-	padding: 1em;
+	padding: 0;
 
 	color: var(--color-header);
 	font-family: var(--type-font-headers);
 	text-transform: uppercase;
 }
 
-p,
+
 ul,
 li {
 	padding: 1em;
@@ -118,7 +122,13 @@ li {
 	line-height: 1.8em;
 }
 
+p {
 
+	font-family: var(--type-font-regular-text);
+	color: var(--color-text-regulartext);
+	font-size: 1em;
+	line-height: 1.8em
+}
 
 
 /****************/
@@ -132,13 +142,10 @@ header {
 	top: 0;
 	z-index: 100;
 
-	/* min-height: 4em; - niet nodig*/
-
 	display: flex;
 	flex-direction: column-reverse;
 
 	box-shadow: 0 3px 10px rgb(0 0 0 / .1);
-	/* hier beter */
 }
 
 
@@ -295,13 +302,376 @@ header section:nth-of-type(2) button {
 
 
 
+/********************/
+/* MAIN 
+/********************/
 
 
-/****************/
-/* MAIN */
-/****************/
-/* 
------- invullen!! */
+
+
+
+
+/********************/
+/* MAIN SECTION 1 / CAROUSEL  */
+/********************/
+
+main section:nth-of-type(1) .carousel {
+	width: 100vw;
+	height: 42vh;
+	position: relative;
+
+}
+
+main section:nth-of-type(1) ul {
+	margin: 0;
+	padding: 0;
+}
+
+
+main section:nth-of-type(1) .slide {
+	padding: 0;
+	position: absolute;
+
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	opacity: 0;
+	transition: 200ms opacity ease-in-out;
+	transition-delay: 200ms;
+}
+
+main section:nth-of-type(1) .slide>img {
+	display: block;
+
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	background-color: var(--color-background-product);
+	object-fit: contain;
+	object-position: top center;
+}
+
+main section:nth-of-type(1) .slide[data-active] {
+	opacity: 1;
+}
+
+main section:nth-of-type(1) .carousel button {
+	position: absolute;
+	border: none;
+
+	font-size: 2em;
+	color: var(--color-text-pink);
+
+	top: 50%;
+	z-index: 80;
+	transform: translateY(-50%);
+	border-radius: .25em;
+	padding: 0 .2em;
+	background: none;
+}
+
+main section:nth-of-type(1) button:hover,
+.carousel button:active {
+	color: var(--color-underline-link);
+}
+
+main section:nth-of-type(1) button:active {
+	outline: 1px solid var(--color-underline-link);
+}
+
+main section:nth-of-type(1) button:nth-of-type(1) {
+	left: 1em;
+}
+
+main section:nth-of-type(1) button:nth-of-type(2) {
+	right: 1em;
+}
+
+main section:nth-of-type(1) a {
+	padding: 0 em;
+	color: var(--color-text);
+	font-size: .8em;
+}
+
+
+
+
+
+
+/********************/
+/* MAIN SECTION 2 / Materialen & Maten  */
+/********************/
+
+main section:nth-of-type(2) {
+	padding: 1.5em;
+	display: flex;
+	flex-direction: column;
+}
+
+main section:nth-of-type(2) h2 {
+	margin-bottom: 1em;
+}
+
+main section:nth-of-type(2) h3 {
+	font-family: var(--type-font-regular-text);
+	font-size: 1.5em;
+	margin-bottom: 1em;
+
+}
+
+main section:nth-of-type(2) label {
+	margin-bottom: .2em;
+	font-family: var(--type-font-headers);
+	font-size: .8em;
+	color: var(--color-text-black);
+	text-transform: uppercase;
+}
+
+main section:nth-of-type(2) select {
+	margin-bottom: 1.5em;
+	align-self: center;
+	justify-content: space-around;
+	padding: 1em;
+
+	width: 100%;
+
+	font-family: var(--type-font-regular-text);
+	font-size: 1em;
+
+	border-color: var(--color-text-light-grey);
+	color: var(--color-text-light-grey);
+}
+
+main section:nth-of-type(2)>a {
+	margin-bottom: 1em;
+	text-align: center;
+	font-family: var(--type-font-headers);
+	font-size: .8em;
+	color: var(--color-text-white);
+
+	padding: 2em;
+	background-color: var(--color-header);
+}
+
+main section:nth-of-type(2)>a:hover {
+	color: var(--color-text-black);
+	background-color: var(--color-header-reclame);
+}
+
+main section:nth-of-type(2) p {
+	padding: 0;
+	margin-bottom: 1em;
+}
+
+main section:nth-of-type(2)>p:nth-of-type(2) {
+	padding-bottom: 2em;
+}
+
+main section:nth-of-type(2)>ul {
+	margin-bottom: 5em;
+	display: flex;
+	justify-content: space-around;
+	font-size: .8em;
+
+	border-top: 1px solid var(--color-underline-light-grey);
+	border-bottom: 1px solid var(--color-underline-light-grey);
+}
+
+main section:nth-of-type(2) ul li a {
+	color: var(--color-text);
+}
+
+main section:nth-of-type(2) details summary {
+	padding-bottom: 1em;
+	margin-bottom: 2em;
+	border-bottom: 1px solid var(--color-underline-light-grey);
+
+	position: relative;
+
+	font-family: var(--type-font-regular-text);
+	color: var(--color-text-black);
+	letter-spacing: .2em;
+	font-size: .8em;
+	text-transform: uppercase;
+	list-style: none;
+}
+
+main section:nth-of-type(2) details summary::after {
+	content: "+";
+	position: absolute;
+	right: 0%;
+	font-size: 1.5em;
+}
+
+main section:nth-of-type(2) details:nth-of-type(3) li {
+	padding-top: 0;
+	list-style: circle;
+	line-height: 1em;
+}
+
+/********************/
+/* MAIN SECTION 3 / CAROUSEL - gerelateerde producten  */
+/********************/
+
+main section:nth-of-type(3) {
+	padding: 1.5em;
+}
+
+main section:nth-of-type(3) li p:nth-of-type(1) {
+	text-transform: uppercase;
+	font-size: 1.5em;
+	padding: 1.5em 1.2em;
+}
+
+
+main section:nth-of-type(3) ul {
+	display: flex;
+	justify-content: space-between;
+	overflow-x: auto;
+}
+
+
+main section:nth-of-type(3) li {
+	flex-shrink: 0;
+	flex-basis: 70%;
+
+	display: grid;
+	grid-template-rows: 1fr min-content min-content;
+}
+
+
+main section:nth-of-type(3) h3 {
+	padding: 0;
+	margin: 1em 0em 0em;
+
+	font-family: var(--type-font-headers);
+	font-size: .9em;
+	color: var(--color-text-black);
+	text-transform: none;
+
+	grid-row-start: 2;
+	grid-column-start: 1;
+	z-index: 90;
+
+	justify-content: start;
+	align-self: top;
+}
+
+
+main section:nth-of-type(3) li p:nth-of-type(1) {
+	margin: 1em;
+	padding: .3em 1em;
+
+	font-family: var(--type-font-headers);
+	font-size: .7em;
+	text-transform: uppercase;
+	color: var(--color-text-black);
+
+	background-color: var(--color-tags);
+	border-radius: 1.2em;
+
+	grid-row-start: 1;
+	grid-column-start: 1;
+	z-index: 90;
+
+	justify-self: start;
+	align-self: start;
+}
+
+
+main section:nth-of-type(3) li p:nth-of-type(2) {
+	padding: 0;
+
+	font-size: .9em;
+	color: var(--color-text-black);
+
+	grid-row-start: 3;
+	grid-column-start: 1;
+	z-index: 90;
+}
+
+main section:nth-of-type(3) li img {
+	width: 100%;
+	height: 100%;
+
+	background-color: var(--color-background-menu-images);
+
+	object-fit: contain;
+	object-position: center top;
+
+	grid-area: 1/1/2/2;
+	align-self: stretch;
+}
+
+/*********************/
+/*  SECTION 4 - 6
+LINK UNDERLINE - BRON SANNE
+/*********************/
+
+main section:nth-child(n+4) p:nth-of-type(2) {
+	position: relative;
+	width: fit-content;
+
+	font-size: .8em;
+	font-family: var(--type-font-headers);
+	letter-spacing: .1em;
+}
+
+main section:nth-child(n+4) p:nth-of-type(2)::before {
+	content: "";
+	position: absolute;
+
+	left: 0;
+	right: 0;
+	bottom: .6em;
+
+	height: .25em;
+
+	background-color: var(--color-underline-link);
+	border-radius: .125em;
+
+	transform-origin: right;
+	transform: scalex(0);
+	transition: transform .3s;
+}
+
+main section:nth-child(n+4) p:nth-of-type(2):visited {
+	color: var(--color-underline-link);
+}
+
+main section:nth-child(n+4) p:nth-of-type(2):focus-visible {
+	background: var(--color-underline-link);
+}
+
+main section:nth-child(n+4) p:nth-of-type(2):hover::before {
+	transform-origin: left;
+	transform: scalex(1);
+}
+
+main section:nth-child(n+4) p:nth-of-type(2):active {
+	color: var(--color-header);
+}
+
+
+/********************/
+/* MAIN SECTIONs 4 - 5 - 6  / BASIS opmaak  */
+/********************/
+
+main section:nth-child(n+4) {
+	padding: 1.5em;
+}
+
+main section:nth-child(n+4) h2 {
+	padding-bottom: .6em;
+}
+
+main section:nth-child(n+4) p {
+	padding-bottom: .8em;
+}
 
 /****************/
 /* FOOTER */
@@ -310,22 +680,63 @@ header section:nth-of-type(2) button {
 footer {
 	background-color: #fff6e8;
 }
+footer section {
+	padding-left: 1.5em;
 
-footer section h2 {
-	padding-bottom: .2em;
-	margin: 0;
-	font-size: 1em;
+}
+footer section h3 {
+	padding-bottom: 1em;
+
+	font-size: 1.4em;
 	letter-spacing: 1px;
+}
 
+footer section ul {
+	padding: 0;
+	padding-bottom: 3em;
 }
 
 footer section li {
-	margin: 0;
 	padding: 0;
-	line-height: 2.5em;
-	font-size: .9em;
+
+	line-height: 2em;
+	font-size: 1em;
 }
 
 footer section li a {
 	text-transform: none;
+}
+
+footer section:nth-of-type(4) ul {
+	display: flex;
+}
+
+
+footer section:nth-of-type(4) form input {
+	font-family: var(--type-font-regular-text);
+	color: var(--color-text-light-grey);
+	border-color: 1px solid var(--color-underline-light-grey);
+	border-style: none;
+	padding: 1em;
+	background: white;
+}
+
+footer section:nth-of-type(4) li {
+	padding-left: 0;
+}
+footer section:nth-of-type(4) li button {
+	padding-left: 0;
+	margin-bottom: 1em;
+	text-align: center;
+	font-family: var(--type-font-headers);
+	font-size: .8em;
+	color: var(--color-text-white);
+	border-style: none;
+	padding: 1em;
+	background-color: var(--color-header);
+}
+
+footer section:nth-of-type(4) li button:hover {
+	color: var(--color-text-black);
+	background-color: var(--color-header-reclame);
 }
