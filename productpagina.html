@@ -14,21 +14,21 @@
 	<header>
 		<section>
 			<h1 aria-label="Welkom bij Vedder & Vedder">
+
 				<img src="images/logo.svg" alt="Vedder & Vedder logo">
 			</h1>
-			<!-- arialabel toevoegne, svg opzoeken hamburger + zoekbalk en winkelmandje  -->
-			<button><img src="images/hamburgermenu.svg" alt=""></button>
+
+			<button aria-label="Open het menu"><img src="images/hamburgermenu.png" alt="het menu"></button>
 
 			<nav>
 				<ul>
-					<li><a href="#"><img src="images/search.png" alt=""></a></li>
-					<li><a href="#"> <img src="images/shoppingcart.svg" alt=""> </a></li>
+					<li><a href="#"><img src="images/search.png" alt="Het zoekveld"></a></li>
+					<li><a href="#"> <img src="images/shoppingcart.svg" alt="Je winkelmandje"> </a></li>
 				</ul>
 			</nav>
 		</section>
 
-		<!-- de schuifnav -->
-		<!-- los zodat die onder de eerste setion kan -->
+
 		<nav>
 			<ul>
 				<li><a href="#">Alle producten </a></li>
@@ -45,7 +45,6 @@
 		</nav>
 
 		<section>
-			<!-- unicode html-->
 			<button>&lsaquo;</button>
 			<marquee behavior="" direction="">
 				<ul>
@@ -57,8 +56,14 @@
 			<button>&rsaquo;</button>
 		</section>
 	</header>
+
+
+
+
 	<main>
 		<section aria-label="Foto's van Birthstone Bracelet">
+			<!-- DIV & Classes gebruikt met goedkeuring van Sanne wegens styling redenen. 
+			Wel gekeken of ik dit kon verminderen t.o.v de tutorial en dat kon bij o.a. de buttons-->
 			<div class="carousel" data-carousel>
 				<button data-carousel-button="prev">&lsaquo;</button>
 				<button data-carousel-button="next">&rsaquo;</button>
@@ -75,7 +80,8 @@
 
 		<section>
 			<h2>Birthstone Bracelet</h2>
-			<h3>€179</h3>
+			<p>€179</p>
+			<!-- h3 voor de prijs is geen heading maar een p -> de prijs is niet een kopje toch?  -->
 
 			<label for="Materiaal-select">Materiaal</label>
 
@@ -89,15 +95,17 @@
 
 			<label for="Maat-select">Maat</label>
 
-			<select name="Materialen" id="Materiaal-select">
+			<select name="Maat" id="Maat-select">
 				<option value="">Kies een optie....</option>
 				<option value="Small">Small 15 cm</option>
 				<option value="Medium">Medium 16 cm</option>
 				<option value="Large">Large 17 cm</option>
 				<option value="Extra large">Extra large 18 cm</option>
+
+				<!-- option selecteren door option[value="Small"], of nth-of-type enzo -->
 			</select>
 
-			<a href="#">Choose your options</a>
+			<button>Choose your options</button>
 
 			<p>De Birthstone Bracelet is verkrijgbaar in 9K of massief 14k goud en met de hand gemaakt in ons Vedder &
 				Vedder Atelier. Deze armband is helemaal te personaliseren met één of meerdere geboortestenen. Zo heb je
@@ -106,8 +114,8 @@
 				natuurlijke eigenschappen van edelstenen kan de kleur per steen afwijken.</p>
 
 			<ul>
-				<li><a href="#"> Op verlanglijstje</a></li>
-				<li><a href="#"> Stuur een hint</a></li>
+				<li><button>Op verlanglijstje</button> </li>
+				<li><button>Stuur een hint</button> </li>
 			</ul>
 
 			<details>
@@ -137,32 +145,37 @@
 		</section>
 
 		<section>
-			<h2>Gerelateerde producten</h2>
-			<ul>
-				<li>
-					<h3>Tilly Tennis Bracelet</h3>
-					<p>Populair</p>
-					<p>Vanaf €149,00</p>
-					<img src="images/show_tennis_bracelet-silver_met_schaduw.webp" alt="Tilly Tennis Bracelet">
-				</li>
+			<h2>Best Sellers</h3>
+				<ul>
+					<li>
+						<a href="./productpagina.html">
+							<h3>Tilly Tennis Bracelet</h3>
+							<p>Populair</p>
+							<p>Vanaf €149,00</p>
+							<img src="images/show_tennis_bracelet-silver_met_schaduw.webp" alt="Tilly Tennis Bracelet">
+						</a>
+					</li>
 
-				<li>
-					<h3>Initial Coin Necklace</h3>
-					<p>Populair</p>
-					<p>Vanaf €99,00</p>
-					<img src="images/initial_coin_necklace___rvl___gold.webp" alt="Initial Coin Necklace">
-				</li>
+					<li>
+						<a href="./productpagina.html">
+							<h3>Initial Coin Necklace</h3>
+							<p>Populair</p>
+							<p>Vanaf €99,00</p>
+							<img src="images/initial_coin_necklace___rvl___gold.webp" alt="Initial Coin Necklace">
+						</a>
+					</li>
 
-				<li>
-
-					<h3>Letter Necklace</h3>
-					<p>Populair</p>
-					<p>Vanaf €179,00</p>
-					<img src="images/letter_necklace_vertical_4.webp" alt="Letter Necklace">
-				</li>
-			</ul>
-
+					<li>
+						<a href="./productpagina.html">
+							<h3>Letter Necklace</h3>
+							<p>Populair</p>
+							<p>Vanaf €179,00</p>
+							<img src="images/letter_necklace_vertical_4.webp" alt="Letter Necklace">
+						</a>
+					</li>
+				</ul>
 		</section>
+
 
 
 		<section>
@@ -171,7 +184,9 @@
 				daarom zo veel mogelijk (bij je) draagt. Mochten de sieraden verkleuren binnen 4 maanden, dan hebben we
 				een plating service beschikbaar. Mocht er iets anders mis zijn met de sieraden, dan hebben we een
 				garantieperiode van 6 maanden voor vergulde sieraden en een jaar voor massief gouden sieraden.</p>
-			<p><a href="#">Lees verder</a></p>
+			<a href="#">Lees verder</a>
+	
+
 		</section>
 
 		<section>
@@ -180,7 +195,7 @@
 				gepersonaliseerde zilveren en gouden kettingen tot onze geboortestenen en diamanten. Onze persoonlijke
 				sieraden zijn gemaakt om elke dag je dierbaren dichtbij je te dragen. Tips en tricks over hoe je onze
 				sieraden zo mooi mogelijk houdt, vind je hier.</p>
-			<p><a href="#">Lees verder</a></p>
+			<a href="#">Lees verder</a>
 		</section>
 
 
@@ -190,7 +205,13 @@
 				eigen Vedder & Vedder atelier. Toen we net begonnen met Vedder & Vedder hadden we enkel kunnen dromen
 				over een team van vrouwen die dag in, dag uit samen met ons zouden werken aan onze passie: het maken van
 				persoonlijke sieraden.</p>
-			<p><a href="#">Lees verder</a></p>
+			<a href="#">Lees verder</a>
+		</section>
+
+
+		<section>
+			<h2>Handgemaakte sieraden</h2>
+			<p>Handgemaakt met liefde in Amsterdam</p>
 		</section>
 
 	</main>
@@ -198,7 +219,7 @@
 
 	<footer>
 		<section>
-			<h3>Klantenservice</h2>
+			<h3>Klantenservice</h3>
 				<ul>
 					<li><a href="#">Veelgestelde vragen</a></li>
 					<li><a href="#">Ketting posities</a></li>
@@ -208,7 +229,7 @@
 		</section>
 
 		<section>
-			<h3>Informatie</h2>
+			<h3>Informatie</h3>
 				<ul>
 					<li><a href="#">Algemene voorwaarden</a></li>
 					<li><a href="#">V&V garantie</a></li>
@@ -218,7 +239,7 @@
 		</section>
 
 		<section>
-			<h3>Over V&V</h2>
+			<h3>Over V&V</h3>
 				<ul>
 					<li><a href="#">Over ons</a></li>
 					<li><a href="#">Atelier</a></li>
@@ -237,7 +258,7 @@
 						<input type="text" id="fname" name="fname" value="Voer je email in"></form>
 				</li>
 				<li> <button>Inschrijven</button></li>
-			
+
 			</ul>
 		</section>
 	</footer>
