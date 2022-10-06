@@ -243,9 +243,9 @@ De verwachting ging beter dan gedacht bij mijn eerste voortgang. Vanaf het begin
   <summary>uitwerken voor eindgesprek</summary>
 
   ### Je uitkomst - karakteristiek screenshots:
-  <img src="readme-images/uitkomst-pagina-een" width="375px" alt="uitomst pagina een">
+  <img src="readme-images/uitkomst-pagina-een.png" width="375px" alt="uitomst pagina een">
   
-  <img src="readme-images/uitkomst-pagina-twee" width="375px" alt="uitomst pagina twee">
+  <img src="readme-images/uitkomst-pagina-twee.png" width="375px" alt="uitomst pagina twee">
 
   ### Dit ging goed/Heb ik geleerd: 
   Ik had niet verwacht dat ik het zo leuk zou vinden en hier een hele dag aan kon zitten. De tijd 
@@ -254,20 +254,20 @@ De verwachting ging beter dan gedacht bij mijn eerste voortgang. Vanaf het begin
   Punten die goed gingen:
   
   - Het toevoegen van before & after.  
-  <img src="readme-images/toevoegen-before-after" width="375px" alt="before en after">
+  <img src="readme-images/toevoegen-before-after.png" width="375px" alt="before en after">
 
   - Grid, Flexbox en position heb ik redelijk onder de knie.
-  <img src="readme-images/positioneren-grid-flex" width="375px" alt="positioneren, grid en flex">
+  <img src="readme-images/positioneren-grid-flex.png" width="375px" alt="positioneren, grid en flex">
 
   - De styling aanpassen van het origineel 
-  <img src="readme-images/eigen-styling" width="375px" alt="styling aanpassen">
+  <img src="readme-images/eigen-styling.png" width="375px" alt="styling aanpassen">
 
   - Dark mode - maar let vooral niet op de kleur ik had helaas geen tijd meer om dit perfect te maken, maar weet wel hoe het werkt. 
-  <img src="readme-images/dark-vs-light" width="375px" alt="dark vs light mode">
+  <img src="readme-images/dark-vs-light.png" width="375px" alt="dark vs light mode">
 
   ### Dit was lastig/Is niet gelukt:
   - Ik vond het lastig om Javascript toe te passen. Het carousel op de product pagina is gelukt, maar de loop werkt alleen met next en niet met prev.
-  <img src="readme-images/js-loop-werkt-niet" width="375px" alt="bummer">
+  <img src="readme-images/js-loop-werkt-niet.png" width="375px" alt="bummer">
 
   Verder is eigenlijk alles uiteindelijk wel gelukt wat ik heb geprobeerd. 
 
