@@ -89,15 +89,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 <details>
   <summary>uitwerken na afloop 2e werkgroep</summary>
 
-  ### de hele pagina: 
-  <img src="readme-images/breakdownvedderenvedderpaginaeen.png" width="375px" alt="breakdown van de hele pagina">
+  ### Pagina 1: 
+  <img src="readme-images/breakdown-homepagina.png" width="375px" alt="breakdown van de hele pagina">
 
-  ### dynamisch deel (bijv menu): 
-  !!!!!!!!!!! nog invullen
-
-  ### wellicht nog een dynamisch deel (bijv filter): 
-  !!!!!!!!!!! nog invullen
-
+  ### Pagina 2: 
+   <img src="readme-images/breakdown-pagina-twee.png" width="375px" alt="breakdown van de hele pagina">
 </details>
 
 
@@ -106,7 +102,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 ## Voortgang 1 (week 2)
 
-<details open>
+<details>
   <summary>uitwerken voor 1e voortgang</summary>
 
   ### Stand van zaken
@@ -133,7 +129,7 @@ De verwachting ging beter dan gedacht bij mijn eerste voortgang. Vanaf het begin
 
 ## Voortgang 2 (week 3)
 
-<details open>
+<details>
   <summary>uitwerken voor 2e voortgang</summary>
 
   ### Stand van zaken
@@ -163,7 +159,7 @@ De verwachting ging beter dan gedacht bij mijn eerste voortgang. Vanaf het begin
 
 ## Toegankelijkheidstest 2/2 (week 4)
 
-<details open>
+<details>
   <summary>uitwerken na test in 8e werkgroep</summary>
 
   ### Bevindingen
@@ -231,12 +227,9 @@ De verwachting ging beter dan gedacht bij mijn eerste voortgang. Vanaf het begin
 
 
   ### Verslag van meeting
-  hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Voortgang ging goed. Akkoord voor carousel met div/class van Sanne. 
+  - Grid en flex nogmaals doorgelopen voor Karenza.  
 
 </details>
 
@@ -246,23 +239,39 @@ De verwachting ging beter dan gedacht bij mijn eerste voortgang. Vanaf het begin
 
 ## Eindgesprek (week 5)
 
-<details>
+<details open>
   <summary>uitwerken voor eindgesprek</summary>
 
   ### Je uitkomst - karakteristiek screenshots:
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="uitomst opdracht 1">
-
+  <img src="readme-images/uitkomst-pagina-een" width="375px" alt="uitomst pagina een">
+  
+  <img src="readme-images/uitkomst-pagina-twee" width="375px" alt="uitomst pagina twee">
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatjes
+  Ik had niet verwacht dat ik het zo leuk zou vinden en hier een hele dag aan kon zitten. De tijd 
+  vliegt letterlijk voorbij wanneer je aan het coderen bent. Over het algemeen viel het me dus ook erg mee. 
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
+  Punten die goed gingen:
+  
+  - Het toevoegen van before & after.  
+  <img src="readme-images/toevoegen-before-after" width="375px" alt="before en after">
 
+  - Grid, Flexbox en position heb ik redelijk onder de knie.
+  <img src="readme-images/positioneren-grid-flex" width="375px" alt="positioneren, grid en flex">
+
+  - De styling aanpassen van het origineel 
+  <img src="readme-images/eigen-styling" width="375px" alt="styling aanpassen">
+
+  - Dark mode - maar let vooral niet op de kleur ik had helaas geen tijd meer om dit perfect te maken, maar weet wel hoe het werkt. 
+  <img src="readme-images/dark-vs-light" width="375px" alt="dark vs light mode">
 
   ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatjes
+  - Ik vond het lastig om Javascript toe te passen. Het carousel op de product pagina is gelukt, maar de loop werkt alleen met next en niet met prev.
+  <img src="readme-images/js-loop-werkt-niet" width="375px" alt="bummer">
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
+  Verder is eigenlijk alles uiteindelijk wel gelukt wat ik heb geprobeerd. 
+
+
 </details>
 
 
@@ -271,13 +280,14 @@ De verwachting ging beter dan gedacht bij mijn eerste voortgang. Vanaf het begin
 
 ## Bronnenlijst
 
-<details open>
+<details>
   <summary>continu bijhouden terwijl je werkt</summary>
 
   Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 
-  1. Sanne van 't Hoofd - Front End Development leraar (hulp bij hamburger menu, grid en de link met underline)
-  2. bron 2
-  3. ...
+  1. Sanne van 't Hoofd - Front End Development leraar - Hulp bij hamburger menu, grid en de link met underline
+  2. Kyle Cook - Youtuber - Gebruikt voor Javascript Carousel https://www.youtube.com/watch?v=9HcxHDS2w1s&ab_channel=WebDevSimplified
+  3. CSS-tricks - A Complete Guide to Flexbox - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+  4. CSS-tricks - A Complete Guide to Grid - https://css-tricks.com/snippets/css/complete-guide-grid/ 
 
 </details>

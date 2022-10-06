@@ -232,7 +232,7 @@ header section:nth-of-type(1) {
 /************/
 /* HET LOGO */
 /************/
-header section:nth-of-type(1)>img {
+header section:nth-of-type(1) a img {
 	/* het logo krijgt een hoogte zodat deze niet groter wordt  */
 	height: .91em;
 }
