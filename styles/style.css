@@ -72,7 +72,7 @@
 /* CUSTOM PROPERTIES darkmode */
 /*********************/
 
-
+/* customproperties darkmode */
 @media (prefers-color-scheme:dark) {
 	:root {
 		--color-text: #ffffff;
@@ -95,20 +95,18 @@
 		--footer-color: #bbbbbb;
 	}
 
+	/* images darkmode */
+
 	main img {
 		opacity: 70%;
-
-
 	}
 
 	main section:nth-of-type(5) img {
 		box-shadow: 1em 1em 0 var(--color-text-pink);
-
 	}
 
 	main section:nth-of-type(2) img:hover {
 		opacity: 100%;
-
 	}
 
 }
@@ -119,7 +117,7 @@
 /****************/
 /* JOUW STYLING */
 /****************/
-
+/* vaste styling voor de overall body (hierin vallen de header, main en footer */
 body {
 	color: var(--color-text);
 	background-color: var(--color-background);
@@ -157,6 +155,7 @@ h3 {
 
 	color: var(--color-header);
 	font-family: var(--type-font-headers);
+	font-size: 1.4em;
 	text-transform: uppercase;
 }
 
@@ -173,25 +172,26 @@ li {
 
 
 
-
-/****************/
-/* HEADER */
-/****************/
+/********************/
+/********************/
+/********************/
+/****** HEADER ******/
+/********************/
+/********************/
+/********************/
 
 header {
-	/* om de schuivende nav binnen de header te kunnen positioneren */
-	/* position: relative; - wordt overschreven door sticky */
+	/* gehele header blijft bovenaan plakken, wordt naar voren gehaald door
+	z index en de DOM wordt gemanipuleerd door flex direction */
 	position: sticky;
 	top: 0;
 	z-index: 100;
-
-	/* min-height: 4em; - niet nodig*/
 
 	display: flex;
 	flex-direction: column-reverse;
 
 	box-shadow: 0 3px 10px rgb(0 0 0 / .1);
-	/* hier beter */
+
 }
 
 
@@ -200,12 +200,11 @@ header {
 /********************/
 /* LOGO & DE MENU"S */
 /********************/
-
-/* de container van de 2e nav en het logo */
 header section:nth-of-type(1) {
+	/* hier wordt het menu gepositioneerd  */
 	font-size: 0.7em;
 	z-index: 100;
-	/* boven het uitschuifmenu */
+
 	padding: .5em;
 
 	display: flex;
@@ -225,6 +224,7 @@ header section:nth-of-type(1) {
 /************/
 
 header section:nth-of-type(1) h1 img {
+	/* het logo krijgt een hoogte zodat deze niet groter wordt  */
 	height: .6em;
 }
 
@@ -237,9 +237,9 @@ header section:nth-of-type(1) h1 img {
 
 /* de button */
 header section:nth-of-type(1) button {
-
+	/* button hamburger menu wordt vooraan geplaatst en gestyled */
 	order: -1;
-	/* vooraan */
+
 	padding: .5em;
 
 	appearance: none;
@@ -251,17 +251,13 @@ header section:nth-of-type(1) button {
 	width: 3.5em;
 }
 
-
-/* het menu - dat schuift */
-/* los niet meer in de eerste section */
 header>nav ul {
+	/* de ul uit de nav wordt buiten beeld geplaatst  */
 	position: absolute;
-	/* positioneren tov de header */
 	top: 100%;
 	left: 0;
 	right: 0;
 
-	/* background-color: white; */
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -278,17 +274,17 @@ header>nav ul {
 }
 
 header section:nth-of-type(1) nav ul li {
+	/* de breedte van de li wordt gestyled */
 	width: 3.5em;
 }
 
-
-/* hier staat nu nog ul achter */
 header>nav.menuGeopend ul {
+	/* wanneer er op menuGeopend geklikt wordt opend het menu zichtbaar */
 	transform: translateY(0%);
 }
 
-/* het service menu - aan de rechterkant */
 header section:nth-of-type(1) nav ul {
+	/* het service menu - aan de rechterkant */
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -307,26 +303,35 @@ header section:nth-of-type(1) nav ul {
 /***********************/
 
 header section:nth-of-type(2) {
-	/* boven het menu */
+	/* boven het menu plaatsen dmv dom manipulatie*/
 	position: relative;
 	z-index: 100;
 }
 
+
 header section:nth-of-type(2) button {
+	/* styling voor de buttons in het section < > */
+	padding: 0 2em;
+
+	font: inherit;
+	color: var(--color-text-white);
+	text-align: center;
+
+	background-color: var(--color-header-reclame);
+
 	appearance: none;
-	background-color: var(--color-background);
 	border: none;
 	border-radius: .25em;
-	font: inherit;
-	text-align: center;
-	color: var(--color-text-black)
 }
 
+
 header section:nth-of-type(2) {
+	/* styling voor de text in het reclame element */
 	padding: 0px 4em;
-	background-color: var(--color-header-reclame);
+
 	font-size: 0.7em;
 	color: var(--color-header-reclame-text);
+	background-color: var(--color-header-reclame);
 	text-transform: uppercase;
 
 	display: flex;
@@ -334,43 +339,41 @@ header section:nth-of-type(2) {
 }
 
 header section:nth-of-type(2) ul {
+	/* flex (row) maken anders komt het onder elkaar in een column */
 	padding: 0em 1em;
-	list-style: none;
+
 	font-size: .9em;
+	list-style: none;
 
 	display: flex;
 	gap: 10em;
-	justify-content: space-between;
-}
-
-header section:nth-of-type(2) button {
-	padding: 0 2em;
-
-	background-color: var(--color-header-reclame);
-	color: var(--color-text-white);
 }
 
 
 
 
 
-/****************/
-/* MAIN */
-/****************/
+/********************/
+/********************/
+/********************/
+/******  MAIN  ******/
+/********************/
+/********************/
+/********************/
 
 
 /*********************/
-/* SECTION 1 = NEW */
+/* MAIN SECTION 1 = NEW */
 /*********************/
-
-
 
 main section:nth-of-type(1) {
+	/* grid gemaakt om elementen over elkaar te plaatsen */
 	display: grid;
 	grid-template-rows: 1fr 5em;
 }
 
 main section:nth-of-type(1) h2 {
+	/* correct positioneren van de h2 */
 	padding: 0em;
 
 	font-family: var(--type-font-special-headers);
@@ -390,10 +393,12 @@ main section:nth-of-type(1) h2 {
 }
 
 main section:nth-of-type(1) img {
+	/* correct positioneren van de img (over gehele grid) */
 	grid-area: 1/1/3/2;
 }
 
 main section:nth-of-type(1) a {
+	/* correct positioneren en stylen van de SHOP NU link */
 	padding: .4em 1em .4em;
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
 
@@ -418,10 +423,12 @@ main section:nth-of-type(1) a {
 /*********************/
 
 main section:nth-of-type(2) {
+	/* positioneren van de section */
 	margin: 0em 0 3em;
 }
 
 main section:nth-of-type(2) li a p:nth-of-type(1) {
+	/* basis styling */
 	text-transform: uppercase;
 	font-size: 1.5em;
 	padding: 1.5em 1.2em;
@@ -429,22 +436,27 @@ main section:nth-of-type(2) li a p:nth-of-type(1) {
 
 
 main section:nth-of-type(2) ul {
+	/* flexen van de UL zodat het netjes naast elkaar 
+	komt en het scrolbaar wordt en niet de hele pagina uitrekt*/
 	display: flex;
-	justify-content: space-between;
 	overflow-x: auto;
 }
 
-
-main section:nth-of-type(2) li a {
+main section:nth-of-type(2) ul li {
+	/* zorgen dat de A's de juiste grootte krijgen */
 	flex-shrink: 0;
 	flex-basis: 70%;
+}
 
+main section:nth-of-type(2) li a {
+	/* een grid maken van de A's zodat we elementen kunnen verplaatsen */
 	display: grid;
 	grid-template-rows: 2fr min-content min-content;
 }
 
 
 main section:nth-of-type(2) a h3 {
+	/* het juist positioneren van de h3's (naam van producten) */
 	padding: 0;
 	margin: 1em 0em 0em;
 
@@ -463,6 +475,7 @@ main section:nth-of-type(2) a h3 {
 
 
 main section:nth-of-type(2) li a p:nth-of-type(1) {
+	/* het juist positioneren van de eerst P's (TAG new/populair etc) */
 	margin: 1em;
 	padding: .3em 1em;
 
@@ -484,6 +497,7 @@ main section:nth-of-type(2) li a p:nth-of-type(1) {
 
 
 main section:nth-of-type(2) li a p:nth-of-type(2) {
+	/* het juist positioneren van de eerst P's (prijs item) */
 	padding: 0;
 
 	font-size: .9em;
@@ -496,6 +510,8 @@ main section:nth-of-type(2) li a p:nth-of-type(2) {
 }
 
 main section:nth-of-type(2) li a img {
+	/* het juist positioneren van de IMG en uitstretchen over het grid 
+	maar wel de juiste afmetingen behouden van origineel */
 	width: 100%;
 	height: 100%;
 
@@ -542,14 +558,16 @@ main section:nth-child(n+3) a::before {
 }
 
 main section:nth-child(n+3) a:visited {
-	color: var(--color-underline-link);
+	color: var(--color-text-black);
 }
 
 main section:nth-child(n+3) a:focus-visible {
 	background: var(--color-underline-link);
 }
 
-main section:nth-child(n+3) a:hover::before {
+main section:nth-of-type(3),
+main section:nth-of-type(4),
+main section:nth-of-type(5) a:hover::before {
 	transform-origin: left;
 	transform: scalex(1);
 }
@@ -559,35 +577,60 @@ main section:nth-child(n+3) a:active {
 }
 
 
+
+
+
 /*********************/
-/*  SECTION 3 = ONS VERHAAL */
+/*  SECTION 3 t/m 5 basis flex styling
 /*********************/
 
-main section:nth-of-type(3) {
+/* ik was nog benieuwd of hier een verkorte versie van is waarbij je met 
+ 1 selector drie verschillende secties kan selecteren (3 t/m 5) of dat dit dan
+ de enige optie is.  */
+
+main section:nth-of-type(3),
+main section:nth-of-type(4),
+main section:nth-of-type(5) {
 	display: flex;
 	flex-direction: column;
 }
 
+main section:nth-child(3) img,
+main section:nth-child(4) img,
+main section:nth-child(5) img {
+	order: -1;
+}
+
+
+
+
+
+/*********************/
+/*  SECTION 3 = ONS VERHAAL */
+/*********************/
+
 main section:nth-of-type(3) h2 {
+	/* basis styling H2 */
 	font-size: 1.9em;
 	line-height: 1em;
 }
 
 main section:nth-of-type(3) p:nth-of-type(1) {
+	/* basis positie P */
 	padding: 0 1.8em 0;
 	margin: 0 0 1.5em;
 }
 
 main section:nth-child(3) a {
+	/* basis positie A -> regel 527 staat de styling */
 	padding: 0;
 	padding-bottom: 1em;
 	margin-left: 2.1em;
 	margin-bottom: 7em;
 }
 
-main section:nth-child(3) img {
-	order: -1;
-}
+
+
 
 
 /*********************/
@@ -595,46 +638,43 @@ main section:nth-child(3) img {
 /*********************/
 
 main section:nth-of-type(4) {
-	display: flex;
-	flex-direction: column;
-}
-
-main section:nth-of-type(4) {
+	/* uitlijnen van de text in het midden  */
 	text-align: center;
 }
 
-main section:nth-of-type(4) h2+p {
-	margin-top: .5em;
+main section:nth-of-type(4) h2,
+p {
+	/* padding zodat de tekst dichter op elkaar valt */
 	padding: 0em 4em 2em;
 }
 
 main section:nth-of-type(4) h2 {
-	padding: 1.5em 0em 1em;
+	/* H2 op juiste positie krijgen  */
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
 
 	font-size: 1.6em;
 }
 
 main section:nth-child(4) a {
+	/* basis positie A -> regel 527 staat de styling */
 	padding: 0;
 	padding-bottom: 1em;
 	margin-bottom: 7em;
 	margin-left: 40%;
 }
 
-main section:nth-child(4) img {
-	order: -1;
-}
+
+
+
+
 
 /*********************/
 /* SECTION 5 = KIDS  */
 /*********************/
 
-main section:nth-of-type(5) {
-	display: flex;
-	flex-direction: column;
-}
-
 main section:nth-of-type(5) h2 {
+	/* h2 stylen en positioneren */
 	padding: 1.2em 0.7em 0em;
 
 	font-family: var(--type-font-special-headers);
@@ -645,11 +685,13 @@ main section:nth-of-type(5) h2 {
 }
 
 main section:nth-of-type(5) p:nth-of-type(1) {
+	/* tekst juiste plek uitlijnen dmv padding */
 	padding: 1.8em;
+	padding-right: 11em;
 }
 
-
 main section:nth-of-type(5) a {
+	/* basis positie A -> regel 527 staat de styling */
 	padding: 0;
 	padding-bottom: 1em;
 	margin-left: 2.1em;
@@ -657,56 +699,86 @@ main section:nth-of-type(5) a {
 }
 
 main section:nth-of-type(5) img {
+	/* image correct positioneren en een 'harde" schaduw toevoegen
+	want vind ik leuk staan */
 	margin: 0em 4em 0em;
 	max-width: 60%;
 
-	order: -1;
+	box-shadow: 1em 1em 0 var(--color-underline-link);
 }
+
+
+
+
+
 
 /*********************/
 /* SECTION 6 = INSTAGRAM */
 /*********************/
 main section:nth-of-type(6) h2 {
+	/* positioneren header instagram */
 	text-align: center;
 }
 
 main section:nth-of-type(6) p {
+	/* text centrereren van de P incl. de link */
 	text-align: center;
 }
 
 main section:nth-of-type(6) p a {
+	/* styling van de link in de P */
 	border-bottom: .2em solid var(--color-underline-link);
+
+	color: var(--color-text-black);
 	font-size: .8em;
 	font-family: var(--type-font-headers);
 	letter-spacing: .1em;
 }
 
+main section:nth-of-type(6) p a:hover {
+	/* met hover veranderd de kleur - 
+	overige styling vind je terug op regel 527 */
+	border-bottom: .2em solid var(--color-tags);
+}
+
 main section:nth-of-type(6) ul {
+	/* de container van de LI (img) flexen zodat het naast
+	elkaar komt te staan */
 	display: flex;
 	justify-content: space-between;
 	overflow-x: auto;
 }
 
 main section:nth-of-type(6) ul li {
+	/* zorgen dat de afbeeldingen het juiste formaat krijgen.  */
 	flex-shrink: 0;
 	flex-basis: 70%;
 }
 
+
+
+
+
+
 /*********************/
 /* SECTION 7 = HANDGEMAAKTE SIERADEN */
 /*********************/
+main section:nth-of-type(7) {
+	/* text in het midden en een border aan de bovenkant */
+	text-align: center;
+	border-top: 1px solid var(--color-underline-light-grey);
+	padding-bottom: 1.5em;
+	padding-top: 3em;
+}
+
 main section:nth-of-type(7) h2 {
-	padding: 2em 0em 0.1em;
-	text-align: center;
-
-	font-size: 1.3em;
-	letter-spacing: 1px;
+	/* h2 netjes */
+	padding: 0;
+	padding-bottom: .5em;
 }
 
-main section:nth-of-type(7) p {
-	margin-bottom: 2em;
-	text-align: center;
-}
+
+
 
 
 /****************/
@@ -714,29 +786,33 @@ main section:nth-of-type(7) p {
 /****************/
 
 footer {
+	/* achtergrond kleur footer */
 	background-color: var(--footer-color);
 }
 
 footer section {
+	/* tekst iets van de kant in zijn geheel */
 	padding-left: 1.5em;
 
 }
 
 footer section h3 {
+	/* letters wat meer uit elkaar van de h3 */
 	padding: 0;
-	padding-top:1em;
-	padding-bottom: 1em;
+	padding-top: 1em;
 
 	font-size: 1.15em;
 	letter-spacing: 1px;
 }
 
 footer section ul {
+	/* de overige tekstblokken wat ruimte geven aan de onderkant */
 	padding: 0;
 	padding-bottom: 3em;
 }
 
 footer section li {
+	/* de losse tekst elementen wat ruimte tussen de regels geven  */
 	padding: 0;
 
 	line-height: 2em;
@@ -744,43 +820,64 @@ footer section li {
 }
 
 footer section li a {
+	/* terug naar lowercase letters */
 	text-transform: none;
 }
 
+
+
+
+
+
+/* Vanaf hier wordt het formulier gestyled section 4 */
+
+footer section:nth-of-type(4) p {
+	padding: 0;
+}
+
 footer section:nth-of-type(4) ul {
+	/* flexen van het inputveld */
 	display: flex;
 	justify-content: center;
 }
 
 
 footer section:nth-of-type(4) form input {
-	font-family: var(--type-font-regular-text);
-	color: var(--color-text-light-grey);
-	border-color: 1px solid var(--color-underline-light-grey);
-	border-style: none;
+	/* stylen van het input veld */
 	padding: 1em;
 	padding-right: 6em;
+
+	font-family: var(--type-font-regular-text);
+	color: var(--color-text-light-grey);
+
+	border-color: 1px solid var(--color-underline-light-grey);
+	border-style: none;
+
 	background: white;
 }
 
 footer section:nth-of-type(4) li {
+	/* positioneren van de 'childrens' zodat ze tegen elkaar aankomen */
 	padding-left: 0;
 	margin-top: 1em;
 }
 
 footer section:nth-of-type(4) li button {
-	padding-left: 0;
+	/* styling button inschrijven */
+	padding: 1em;
 	margin-bottom: 1em;
+
 	text-transform: uppercase;
 	font-family: var(--type-font-headers);
 	font-size: .8em;
 	color: var(--color-text-white);
+
 	border-style: none;
-	padding: 1em;
 	background-color: var(--color-header);
 }
 
 footer section:nth-of-type(4) li button:hover {
+	/* styling voor het hoveren van de butteon */
 	color: var(--color-text-black);
 	background-color: var(--color-header-reclame);
 }

@@ -118,6 +118,7 @@
 /****************/
 /* JOUW STYLING */
 /****************/
+/* vaste styling voor de overall body (hierin vallen de header, main en footer */
 body {
 	color: var(--color-text);
 	background-color: var(--color-background);
@@ -150,6 +151,7 @@ li {
 	appearance: none;
 }
 
+h1,
 h2,
 h3 {
 	padding: 0;
@@ -187,9 +189,10 @@ p {
 /* HEADER */
 /****************/
 header {
+	/* gehele header blijft bovenaan plakken, wordt naar voren gehaald door
+	z index en de DOM wordt gemanipuleerd door flex direction */
 	position: sticky;
 	top: 0;
-	/* header blijft bovenaan plakken ^ */
 	z-index: 100;
 
 	display: flex;
@@ -205,9 +208,10 @@ header {
 
 
 /********************/
-/* LOGO & DE MENU"S */
+/* LOGO & MENU"S */
 /********************/
 header section:nth-of-type(1) {
+	/* hier wordt het menu gepositioneerd  */
 	font-size: 0.7em;
 	z-index: 100;
 
@@ -228,8 +232,9 @@ header section:nth-of-type(1) {
 /************/
 /* HET LOGO */
 /************/
-header section:nth-of-type(1) h1 img {
-	height: .6em;
+header section:nth-of-type(1)>img {
+	/* het logo krijgt een hoogte zodat deze niet groter wordt  */
+	height: .91em;
 }
 
 
@@ -242,8 +247,8 @@ header section:nth-of-type(1) h1 img {
 /* MENU OPENEN/SLUITEN */
 /**************************/
 
-/* de button */
 header section:nth-of-type(1) button {
+	/* button hamburger menu wordt vooraan geplaatst en gestyled */
 	order: -1;
 	padding: .5em;
 
@@ -256,12 +261,9 @@ header section:nth-of-type(1) button {
 	width: 3.5em;
 }
 
-/* het menu - dat schuift */
-/* los niet meer in de eerste section */
-
 header>nav ul {
+	/* de ul uit de nav wordt buiten beeld geplaatst  */
 	position: absolute;
-	/* positioneren tov de header */
 	top: 100%;
 	left: 0;
 	right: 0;
@@ -282,16 +284,17 @@ header>nav ul {
 }
 
 header section:nth-of-type(1) nav ul li {
+	/* de breedte van de li wordt gestyled */
 	width: 3.5em;
 }
 
-
 header>nav.menuGeopend ul {
+	/* wanneer er op menuGeopend geklikt wordt opend het menu zichtbaar */
 	transform: translateY(0%);
 }
 
-/* het service menu - aan de rechterkant */
 header section:nth-of-type(1) nav ul {
+	/* het service menu - aan de rechterkant */
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -310,23 +313,29 @@ header section:nth-of-type(1) nav ul {
 /***********************/
 
 header section:nth-of-type(2) {
-	/* boven het menu */
+	/* boven het menu plaatsen dmv dom manipulatie*/
 	position: relative;
 	z-index: 100;
 }
 
 header section:nth-of-type(2) button {
+	/* styling voor de buttons in het section < > */
+	padding: 0 2em;
+
 	font: inherit;
+	color: var(--color-text-white);
 	text-align: center;
-	color: var(--color-text-black);
+
+	background-color: var(--color-header-reclame);
 
 	appearance: none;
-	background-color: var(--color-background);
 	border: none;
 	border-radius: .25em;
 }
 
+
 header section:nth-of-type(2) {
+	/* styling voor de text in het reclame element */
 	padding: 0px 4em;
 
 	font-size: 0.7em;
@@ -339,64 +348,57 @@ header section:nth-of-type(2) {
 }
 
 header section:nth-of-type(2) ul {
+	/* flex (row) maken anders komt het onder elkaar in een column */
 	padding: 0em 1em;
-	list-style: none;
+
 	font-size: .9em;
+	list-style: none;
 
 	display: flex;
 	gap: 10em;
-	justify-content: space-between;
-}
-
-header section:nth-of-type(2) button {
-	padding: 0 2em;
-
-	background-color: var(--color-header-reclame);
-	color: var(--color-text-white);
 }
 
 
 
 
 
-
 /********************/
 /********************/
 /********************/
-/* MAIN /* MAIN /* MAIN /* MAIN /* MAIN /* MAIN /* MAIN /* MAIN /* MAIN 
+/******  MAIN  ******/
 /********************/
 /********************/
 /********************/
-
 
 
+
 /********************/
-/* MAIN SECTION 1 /   */
+/* MAIN SECTION 1 = CAROUSEL */
 /********************/
+
+
+/* Carousel - BRON: Kyle Cook | youtube: 
+https://www.youtube.com/watch?v=9HcxHDS2w1s&ab_channel=WebDevSimplified */
 
 main section:nth-of-type(1) .carousel {
+	/* gehele div krijgt een position relative en de 
+	breedte en hoogte wordt vastgezet */
 	position: relative;
 
 	width: 100vw;
 	height: 40vh;
 }
 
-main section:nth-of-type(1) ul {
-	margin: 0;
-	padding: 0;
-}
-
 main section:nth-of-type(1) .slide {
-	/* de slideshow en overgang */
+	/* de slideshow en overgang, flex omdat de container dan op
+	zijn plek blijft en niet over de andere tekst heen valt. 
+	Inset op 0 ipv T/B/R/L*/
 	padding: 0;
 
 	position: absolute;
 	display: flex;
 
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	inset: 0;
 
 	opacity: 0;
 	transition: 200ms opacity ease-in-out;
@@ -404,14 +406,12 @@ main section:nth-of-type(1) .slide {
 }
 
 main section:nth-of-type(1) .slide>img {
-	/* zorgt er voor dat de img niet uitrekt */
+	/* zorgt er voor dat de img niet uitrekt en helemaal bovenin 
+	blijft zitten */
 	flex-grow: 1;
 	object-fit: contain;
 
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	inset: 0;
 
 	background-color: var(--color-background-product);
 }
@@ -437,32 +437,49 @@ main section:nth-of-type(1) .carousel button {
 	background: none;
 }
 
-main section:nth-of-type(1) button:hover,
-.carousel button:active {
-	color: var(--color-underline-link);
-}
-
-main section:nth-of-type(1) button:active {
-	outline: 1px solid var(--color-underline-link);
-}
-
 main section:nth-of-type(1) button:nth-of-type(1) {
+	/* positionering buttons op IMG */
 	left: 1em;
 }
 
 main section:nth-of-type(1) button:nth-of-type(2) {
+	/* positioneren buttons op IMG */
 	right: 1em;
 }
 
+main section:nth-of-type(1) button:hover,
+button:active,
+button:focus {
+	/* styling voor de button in verschillende states. */
+	color: var(--color-underline-link);
+}
+
+main section:nth-of-type(1) button:active,
+button:focus {
+	/* styling voor de button in verschillende states. */
+	outline: 1px solid var(--color-underline-link);
+}
+
 main section:nth-of-type(1) a {
+	/* styling voor de HOME link onder de IMG's */
 	padding: 0 em;
+	margin-left: 1em;
 	color: var(--color-text);
 	font-size: .8em;
 }
 
+main section:nth-of-type(1) a:hover,
+a:active,
+a:focus {
+	/* styling voor de A in verschillende states. */
+	color: var(--color-underline-link);
+}
 
-
-
+main section:nth-of-type(1) a:active,
+a:focus {
+	/* styling voor de A in verschillende states. */
+	outline: 1px solid var(--color-underline-link);
+}
 
 
 /********************/
@@ -470,26 +487,29 @@ main section:nth-of-type(1) a {
 /********************/
 
 main section:nth-of-type(2) {
-	/* section in een flex column zodat alles netjes onder elkaar komt */
+	/* section in een flex column zodat 
+	alles netjes onder elkaar komt en padding zodat alles overal gelijk valt*/
 	padding: 1.5em;
 
 	display: flex;
 	flex-direction: column;
 }
 
-main section:nth-of-type(2) h2 {
+main section:nth-of-type(2) h1 {
+	/* wat ruimte onder de h1 Birthstone Bracelet */
 	margin-bottom: 1em;
 }
 
-main section:nth-of-type(2) h3 {
+main section:nth-of-type(2)>p:nth-of-type(1) {
+	/* styling voor het prijs element (p) */
 	margin-bottom: 1em;
 
 	font-family: var(--type-font-regular-text);
-	font-size: 1.5em;
+	font-size: 1.3em;
 }
 
 main section:nth-of-type(2) label {
-	/* styling voor de labels */
+	/* styling voor het label Materiaal & Maat */
 	margin-bottom: .2em;
 
 	font-family: var(--type-font-headers);
@@ -499,25 +519,23 @@ main section:nth-of-type(2) label {
 }
 
 main section:nth-of-type(2) select {
-	/* styling voor de select opties */
+	/* styling voor het select veld (kies een optie..) */
 	padding: 1em;
 	margin-bottom: 1.5em;
-
-	align-self: center;
-	justify-content: space-around;
-
-	width: 100%;
 
 	font-family: var(--type-font-regular-text);
 	font-size: 1em;
 	color: var(--color-text-light-grey);
 
-	border-color: var(--color-text-light-grey);
+	align-self: center;
+	justify-content: space-around;
 
+	width: 100%;
+	border-color: var(--color-text-light-grey);
 }
 
 main section:nth-of-type(2)>button {
-	/* styling voor de eerste link in de section */
+	/* styling voor de "Choose your options button" */
 	margin-bottom: 1em;
 	padding: 2em;
 
@@ -533,12 +551,13 @@ main section:nth-of-type(2)>button {
 }
 
 main section:nth-of-type(2)>button:hover {
-	/* styling voor wanneer er met de muis over de link gegaan wordt */
+	/* styling voor de button bij hover state */
 	color: var(--color-text-black);
 	background-color: var(--color-header-reclame);
 }
 
 main section:nth-of-type(2) p {
+	/* styling voor alle P's binnen de eerste sections  */
 	padding: 0;
 	margin-bottom: 1em;
 }
@@ -548,7 +567,7 @@ main section:nth-of-type(2)>p:nth-of-type(2) {
 }
 
 main section:nth-of-type(2)>ul {
-	/* display flex omdat deze UL content in een row moet worden */
+	/* display flex omdat deze content in een row moet staan */
 	margin-bottom: 5em;
 	display: flex;
 	justify-content: space-around;
@@ -559,6 +578,7 @@ main section:nth-of-type(2)>ul {
 }
 
 main section:nth-of-type(2) ul li button {
+	/* styling voor de buttons */
 	border: none;
 	background: none;
 
@@ -567,16 +587,28 @@ main section:nth-of-type(2) ul li button {
 }
 
 main section:nth-of-type(2) ul li button:hover {
+	/* styling voor de hover */
 	border: none;
 	background: none;
 	text-transform: uppercase;
 	color: var(--color-header-reclame);
 }
-/* 
+
 main section:nth-of-type(2) ul li>button:before {
-	content:url("../images/heart-svgrepo-com.svg"); 
-	
-} */
+	/* de heart IMG toevoegen aan op verlanglijstje en stuur een hint
+	BRON: https://stackoverflow.com/questions/8977957/can-i-change-the-height-of-an-image-in-css-before-after-pseudo-elements */
+	content: "";
+	background-image: url("../images/heartlikebutton.png");
+	background-size: 100% 100%;
+	display: inline-block;
+
+	height: 1em;
+	width: 1em;
+
+	position: relative;
+	top: 1px;
+	right: 10px;
+}
 
 main section:nth-of-type(2) details summary {
 	/* styling voor de details zodat de underline op de juist positie komt */
@@ -594,7 +626,7 @@ main section:nth-of-type(2) details summary {
 	list-style: none;
 }
 
-main section:nth-of-type(2) details summary::after {
+main section:nth-of-type(2) details summary:after {
 	/* zodat het +je achter de tekst komt te staan voor het openklappen */
 	content: "+";
 
@@ -605,6 +637,7 @@ main section:nth-of-type(2) details summary::after {
 }
 
 main section:nth-of-type(2) details:nth-of-type(3) li {
+	/* styling opsomming laatste details */
 	padding-top: 0;
 
 	list-style: circle;
@@ -622,41 +655,39 @@ main section:nth-of-type(2) details:nth-of-type(3) li {
 /********************/
 
 main section:nth-of-type(3) {
+	/* positioneren van de section */
 	padding: 1.5em;
+	padding-bottom: 0;
 }
 
-main section:nth-of-type(3) li p:nth-of-type(1) {
+main section:nth-of-type(2) li a p:nth-of-type(1) {
+	/* basis styling */
 	text-transform: uppercase;
 	font-size: 1.5em;
 	padding: 1.5em 1.2em;
 }
 
-
 main section:nth-of-type(3) ul {
-	/* zorgt dat de afbeeldingen naast elkaar komen te staan 
-	en dat het overflowt - dus met een bar. */
+	/* flexen van de UL zodat het netjes naast elkaar 
+	komt en het scrolbaar wordt en niet de hele pagina uitrekt*/
 	display: flex;
-	justify-content: space-between;
 	overflow-x: auto;
 }
 
-
-main section:nth-of-type(3) li a {
-	/* zorgt ervoor dat alles in het juiste formaat wordt 
-	weergegeven. */
+main section:nth-of-type(3) ul li {
+	/* zorgen dat de A's de juiste grootte krijgen */
 	flex-shrink: 0;
 	flex-basis: 70%;
-
-	/* hier maak ik een grid aan van drie rows waarbij
-	de afbeelding groot weergegeven moet worden. */
-	display: grid;
-	grid-template-rows: 1fr min-content min-content;
 }
 
+main section:nth-of-type(3) li a {
+	/* een grid maken van de A's zodat we elementen kunnen verplaatsen */
+	display: grid;
+	grid-template-rows: 2fr min-content min-content;
+}
 
-main section:nth-of-type(3) li a h3 {
-	/* de h3 moet onder de afbeelding komen te staan, hiermee
-	wissel ik o.a. de posities in het grid om*/
+main section:nth-of-type(3) a h3 {
+	/* het juist positioneren van de h3's (naam van producten) */
 	padding: 0;
 	margin: 1em 0em 0em;
 
@@ -673,11 +704,8 @@ main section:nth-of-type(3) li a h3 {
 	align-self: top;
 }
 
-
 main section:nth-of-type(3) li a p:nth-of-type(1) {
-	/* de eerste P (populair) moet linksboven in het 
-	grid komen. Hiermee verplaats ik deze naar de juiste
-	positie en komt deze boven de IMG + ik geef extra styling */
+	/* het juist positioneren van de eerst P's (TAG new/populair etc) */
 	margin: 1em;
 	padding: .3em 1em;
 
@@ -697,10 +725,8 @@ main section:nth-of-type(3) li a p:nth-of-type(1) {
 	align-self: start;
 }
 
-
 main section:nth-of-type(3) li a p:nth-of-type(2) {
-	/* de tweede P (vanaf €) moet onder de H3 komen te staan
-	dat gebeurd er hier. */
+	/* het juist positioneren van de eerst P's (prijs item) */
 	padding: 0;
 
 	font-size: .9em;
@@ -713,7 +739,8 @@ main section:nth-of-type(3) li a p:nth-of-type(2) {
 }
 
 main section:nth-of-type(3) li a img {
-	/* dit is de IMG welke binnen de eerste kolom moet vallen.  */
+	/* het juist positioneren van de IMG en uitstretchen over het grid 
+	maar wel de juiste afmetingen behouden van origineel */
 	width: 100%;
 	height: 100%;
 
@@ -729,30 +756,29 @@ main section:nth-of-type(3) li a img {
 
 
 
-
-
 /*********************/
 /*  SECTION 4 - 6
 LINK UNDERLINE - BRON SANNE
 /*********************/
 
-main section:nth-child(n+4) p:nth-of-type(2) {
-	/* hiermee selecteer ik alle sections vanaf de 4 en hiervan de 2e p */
+main section:nth-child(n+4) a {
 	position: relative;
 	width: fit-content;
 
 	font-size: .8em;
 	font-family: var(--type-font-headers);
+	color: var(--color-text-black);
 	letter-spacing: .1em;
 }
 
-main section:nth-child(n+4) p:nth-of-type(2)::before {
+main section:nth-child(n+4) a:before {
 	content: "";
 	position: absolute;
 
+	top: 1.5em;
 	left: 0;
 	right: 0;
-	bottom: .6em;
+	bottom: 0;
 
 	height: .25em;
 
@@ -764,20 +790,20 @@ main section:nth-child(n+4) p:nth-of-type(2)::before {
 	transition: transform .3s;
 }
 
-main section:nth-child(n+4) p:nth-of-type(2):visited {
-	color: var(--color-underline-link);
+main section:nth-child(n+4) a:visited {
+	color: var(--color-text-black);
 }
 
-main section:nth-child(n+4) p:nth-of-type(2):focus-visible {
+main section:nth-child(n+4) a:focus-visible {
 	background: var(--color-underline-link);
 }
 
-main section:nth-child(n+4) p:nth-of-type(2):hover::before {
+main section:nth-child(n+4) a:hover::before {
 	transform-origin: left;
 	transform: scalex(1);
 }
 
-main section:nth-child(n+4) p:nth-of-type(2):active {
+main section:nth-child(n+4) a:active {
 	color: var(--color-header);
 }
 
@@ -789,21 +815,25 @@ main section:nth-child(n+4) p:nth-of-type(2):active {
 
 
 /********************/
-/* MAIN SECTIONs 4 - 5 - 6  / BASIS opmaak  */
+/* MAIN SECTIONs 4 t/m 6  / BASIS opmaak  */
 /********************/
 
 main section:nth-child(n+4) {
-
+	/* basis padding toevoegen zodat het netjes staat */
 	padding: 1.5em;
+	padding-top: 2em;
+	padding-bottom: 3em;
 }
 
 main section:nth-child(n+4) h2 {
+	/* basis padding toevoegen voor de koppen zodat het netjes staat */
 	padding-bottom: .6em;
 	font-size: 1.4em;
 }
 
 main section:nth-child(n+4) p {
-	padding-bottom: .8em;
+	/* basis padding toevoegen zodat de link niet te dicht op de tekst komt */
+	padding-bottom: 1em;
 }
 
 
@@ -817,16 +847,20 @@ main section:nth-child(n+4) p {
 /* MAIN SECTIONs 7  / opmaak
 /********************/
 
+
 main section:nth-of-type(7) {
+	/* text in het midden en een border aan de bovenkant */
 	text-align: center;
 	border-top: 1px solid var(--color-underline-light-grey);
+	padding-bottom: 1.5em;
+	padding-top: 3em;
 }
 
-
-
-
-
-
+main section:nth-of-type(7) h2 {
+	/* h2 netjes */
+	padding: 0;
+	padding-bottom: .5em;
+}
 
 
 
@@ -837,15 +871,18 @@ main section:nth-of-type(7) {
 /****************/
 
 footer {
+	/* achtergrond kleur footer */
 	background-color: var(--footer-color);
 }
 
 footer section {
+	/* tekst iets van de kant in zijn geheel */
 	padding-left: 1.5em;
 
 }
 
 footer section h3 {
+	/* letters wat meer uit elkaar van de h3 */
 	padding: 0;
 	padding-top: 1em;
 
@@ -854,11 +891,13 @@ footer section h3 {
 }
 
 footer section ul {
+	/* de overige tekstblokken wat ruimte geven aan de onderkant */
 	padding: 0;
 	padding-bottom: 3em;
 }
 
 footer section li {
+	/* de losse tekst elementen wat ruimte tussen de regels geven  */
 	padding: 0;
 
 	line-height: 2em;
@@ -866,43 +905,59 @@ footer section li {
 }
 
 footer section li a {
+	/* terug naar lowercase letters */
 	text-transform: none;
 }
 
+
+
+
+
+/* Vanaf hier wordt het formulier gestyled section 4 */
+
 footer section:nth-of-type(4) ul {
+	/* flexen van het inputveld */
 	display: flex;
 	justify-content: center;
 }
 
 
 footer section:nth-of-type(4) form input {
-	font-family: var(--type-font-regular-text);
-	color: var(--color-text-light-grey);
-	border-color: 1px solid var(--color-underline-light-grey);
-	border-style: none;
+	/* stylen van het input veld */
 	padding: 1em;
 	padding-right: 6em;
+
+	font-family: var(--type-font-regular-text);
+	color: var(--color-text-light-grey);
+
+	border-color: 1px solid var(--color-underline-light-grey);
+	border-style: none;
+
 	background: white;
 }
 
 footer section:nth-of-type(4) li {
+	/* positioneren van de 'childrens' zodat ze tegen elkaar aankomen */
 	padding-left: 0;
 	margin-top: 1em;
 }
 
 footer section:nth-of-type(4) li button {
-	padding-left: 0;
+	/* styling button inschrijven */
+	padding: 1em;
 	margin-bottom: 1em;
+
 	text-transform: uppercase;
 	font-family: var(--type-font-headers);
 	font-size: .8em;
 	color: var(--color-text-white);
+
 	border-style: none;
-	padding: 1em;
 	background-color: var(--color-header);
 }
 
 footer section:nth-of-type(4) li button:hover {
+	/* styling voor het hoveren van de butteon */
 	color: var(--color-text-black);
 	background-color: var(--color-header-reclame);
 }

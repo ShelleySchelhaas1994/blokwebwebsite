@@ -11,7 +11,6 @@ function openMenu() {
 
 
 // buttons carousel pagina twee - BRON: Kyle Cook | youtube: https://www.youtube.com/watch?v=9HcxHDS2w1s&ab_channel=WebDevSimplified
-
 const buttons = document.querySelectorAll("[data-carousel-button]")
 
 buttons.forEach(button => {
